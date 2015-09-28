@@ -1,0 +1,119 @@
+  <h1 class="heading-large">Add scheme organiser details</h1>
+
+   <p class="text"> Where is the company registered?</p>
+    
+
+
+<fieldset class="inline">
+    <label class="block-label" for="radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="yes" checked="checked">
+      UK
+    </label>
+    <label class="block-label" for="radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="no">
+      Overseas
+    </label>
+  </fieldset><br>
+
+    <div class="form-block">
+<form action="" method="post" class="form">
+            <fieldset>
+            <br>
+              
+              <!--div4  start--><div class="form-group">
+
+          <label for="company-name" class="form-label">Company name</label>
+              <input type="text" class="form-control" id="company-name" value="Acme Ltd">
+            <!--div4  end--></div>
+
+           <div class="form-group">
+            <label for="company-address1" class="form-label">Address</label>
+
+              <input type="text" class="form-control" id="company-address1" value="Unit 5">
+            <label for="company-address2" class="form-label"></label>
+
+              <input type="text" class="form-control" id="company-address2" value="Spring Industrial Estate">
+              <label for="company-address3" class="form-label"></label>
+
+              <input type="text" class="form-control" id="company-address2" value="Brighton">
+              <label for="company-address3" class="form-label"></label>
+
+              <input type="text" class="form-control" id="company-address2" value="East Sussex">
+            <!--div5  end--></div>
+
+           <div id="uk"class="form-group">
+              <label for="postcode-name" class="form-label">Postcode</label>
+              <input type="text" class="form-control-1-8" id="postcode-name" value="BN1 4DR" maxlength="8"></div> 
+            <!--div6  start--
+
+
+ 
+  
+            
+            <p class="text"></p>
+            <!--div8  start-->
+            <div class="form-group" id="crn">
+          <label for="crn-name" class="form-label" ><span class="text">Company Registration Number (optional)</span></label>
+            <span class="text form-hint">It's an 8 digit number or 2 letters followed by a 6 digit number, allocated by Companies House. For example, 12345678 or AB123456.</span></label>
+             <input type="text" class="form-control-1-4" id="ctr-name" value="3675792876">
+            <p class="text"></p>
+          <!--div11 <details>
+            <summary><span class="summary">Where can I find the CTR?</span></summary>
+             <div class="panel-indent">
+              <p class="text">
+               If hint is long place here.
+              </p>
+            </div> ends-->
+          </details> 
+              
+
+              </div>
+          </details> 
+     <div class="form-group" id="ctr">
+          <label for="ctr-name" class="form-label">Corporation Tax Reference (optional)</label>
+          <span class="text form-hint">It's a 10 digit number issued by HM Revenue and Customs, usually used in relation to company tax returns. For example, 1234567890.</span></label>
+              <input type="text" class="form-control-1-4" id="ctr-name" value="4683764882">
+            <p class="text"></p>
+          <!--div11 <details>
+            <summary><span class="summary">Where can I find the CTR?</span></summary>
+             <div class="panel-indent">
+              <p class="text">
+               If hint is long place here.
+              </p>
+            </div> ends-->
+          </details> 
+        </div>   <!--div10  ends--> 
+
+<script>
+
+$("#radio-inline-2").on('click', function() {
+  $("#country-name").show();
+  $("#crn").hide();
+  $("#ctr").hide();
+  $("#overseas").show();
+  $("#uk").hide();
+
+
+
+ 
+});
+
+</script>
+
+<script>
+
+$("#country-name").hide();
+$("#overseas").hide();
+
+
+$("#radio-inline-1").on('click', function() {
+  $("#country-name").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#uk").show();
+  $("#overseas").hide();
+
+ 
+});
+
+</script>

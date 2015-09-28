@@ -1,0 +1,54 @@
+  {{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+  
+<main id="content" role="main">
+  <div class="outer-block">
+     <div class="inner-block">
+  <!-- main content starts -->
+  
+  
+               {{>sub_header_CSOP}}
+ 
+  <h1 class="heading-large">Add company details</h1>
+  <p>Find companies using the Company Registration Number (optional)</p>
+    <div class="form-block">
+             
+<form action="" method="post" class="form">
+            <fieldset>
+              <legend></legend>
+              
+       
+      
+          
+        <div class="form-group">
+            <label for="crn-name" class="form-label"><span class="bold-small">Company Registration Number (optional)</span></label>
+            <span class="text form-hint">It's an 8 digit number or 2 letters followed by a 6 digit number, allocated by Companies House. For example, 12345678 or AB123456.</span></label>
+              <input type="text" class="form-control-1-4" id="crn-name">
+        </div>   <!--div10  ends--> 
+
+      <a class="button" id="btnValidationNext" type="button" href="crn2">Find Company</a>
+      <p><a href=""><a href="/group_company_scenario1_4">I don't know the CRN or the company doesn't have one.</a></p>
+                <p class="text"><a href="CRN_start">Back</a></p>
+              </div>                           
+            </fieldset>
+           
+            </form>
+
+          
+
+ <!-- main content ends -->
+</div>
+</div>
+  </div>
+</main>
+{{/content}}
+
+{{/layout}}

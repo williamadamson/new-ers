@@ -1,0 +1,108 @@
+  <h1 class="heading-large">Scheme alterations and variations</h1>
+   <p="text">Have alterations been made to 'key features' of this scheme or has there been a variation in the share capital?</p>
+ <!-- radio buttons start -->
+         
+
+
+  <div class="form-block">
+            <div class="text panel-indent"><p class="text">
+           A key feature is anything that's necessary for the scheme to meet its legal requirements, for example, the eligibility of individuals to take part and the eligibility of the shares to be used.
+              </p></div>
+
+     
+<fieldset class="inline">
+    <label class="block-label" for="radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="yes">
+      Yes
+    </label>
+    <label class="block-label" for="radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="no">
+      No
+    </label>
+  </fieldset>
+        </form>
+
+
+<div class="form-group" id="firstSet">
+            <br>
+          <button id="next" class="button">Continue</button>
+          <br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="#">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+   
+
+ <!-- radio buttons start -->
+          <div class="inner-block">
+          <div class="form-block" id="options">
+           <form action="" method="post" class="form">
+           <fieldset><br>
+              <div class="current-question" id="current-question">
+               
+                <p class="text">Select all that apply.</p>
+              </div>
+     
+            <div class="form-group">
+                <p class="option group">
+                  <label class="block-label" for="amendscheckbox1"><input type="checkbox" id="amendscheckbox1" value="1"> Alterations to the terms of an existing option (other than by a variation in the share capital of which the shares form a part)</label>
+                  <label class="block-label" for="amendscheckbox2"><input type="checkbox" id="amendscheckbox2" value="2"> Alterations to the eligibility of individuals to take part in the scheme</label>
+                  <label class="block-label" for="amendscheckbox3"><input type="checkbox" id="amendscheckbox3" value="3"> Alterations following a company reorganisation where employees have given up their options in the original company in exchange for options in the new company</label>
+                  <label class="block-label" for="amendscheckbox4"><input type="checkbox" id="amendscheckbox4" value="4"> Variations in the share capital such as an increase (more shares, same value), a consolidation (less shares, each with a higher value) or subdivision (more shares, each with a lower value) of shares, or a rights issue.</label>
+                
+                  <label class="block-label" for="amendscheckbox7"><input type="checkbox" id="amendscheckbox7" value="7"> Other alterations made to key features of this scheme</label>
+                </p>
+              </div>
+              <div class="icon-important"></div>
+              <div style="display: inline-block; float: left; width: 60%">
+               <span class="bold-small">I declare that the requirements of parts 2-6 of Schedule 4 Income Tax (Earnings and Pensions) Act 2003 are still being met in relation to this Company Share Option Plan regardless of the alterations or variations made.</span>
+                      </div>       
+
+  
+              <div class="form-group">
+                <br>
+                <br>
+                <a class="button" id="btnValidationNext" type="button" href="#">I accept - continue</a>
+                <p class="text"><a href="/scenarios">Back</a></p>
+              </div>                           
+            </fieldset>
+           
+            </form>
+          
+
+ <!-- main content ends -->
+</div>
+</div>
+  </div>
+</div>
+</main>
+
+
+
+<script>
+
+$("#radio-inline-2").on('click', function() {
+   $("#options").hide();
+   $("#firstSet").show();
+   
+
+
+});
+
+</script>
+
+<script>
+
+$("#options").hide();
+
+$("#radio-inline-1").on('click', function() {
+  $("#options").show();
+   $("#firstSet").hide();
+  
+
+});
+
+</script>
+

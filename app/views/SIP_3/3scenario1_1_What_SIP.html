@@ -1,0 +1,68 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+  
+
+  <style>
+
+  .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+
+.modal {
+    /* some styles to position the modal at the center of the page */
+   
+position: fixed;
+top: 25%;
+left: 30%;
+width: 60%;
+max-width: 630px;
+min-width: 320px;
+height: auto;
+z-index: 2000;
+
+background-color: #fff;
+border-style: solid;
+border-width: 1px;
+border-color: #0b0c0c;
+padding: 20px 30px 40px 30px;
+visibility: hidden;
+
+
+}
+
+</style>
+<main id="content" role="main">
+  <div class="outer-block">
+   <div class="inner-block">
+  <!-- main content starts -->
+   {{>3sub_header_SIP_new}}
+  {{>3what_SIP}}
+  {{>exitbox}}
+          
+
+
+ <!-- main content ends -->
+  </div>
+</div>
+</main>
+{{/content}}
+
+{{/layout}}

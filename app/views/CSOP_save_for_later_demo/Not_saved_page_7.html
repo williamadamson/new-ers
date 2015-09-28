@@ -1,0 +1,31 @@
+
+{{<layout}}
+
+
+
+{{$content}}
+
+<main id="content" role="main">
+        <div class="outer-block">
+            <div class="inner-block">
+                <div class="grid grid-2-3">
+                   <a href="07_CSOP_application_start_no_saved"><img src="../../public/icons/demo_flow_7.jpg" alt=""></a>
+    </main>
+
+{{/content}}
+
+{{$bodyEnd}}
+<script type="application/javascript" src="/public/scripts/jquery-1.11.1.min.js"></script>
+<script type="application/javascript">
+    $(document).ready(function(){
+        var fireworks = document.getElementById('fireworks').checked;
+        
+        $('#fireworks').on('click', function(){
+            fireworks = ( fireworks ) ? "false" : "true";
+            $.ajax({url: "/fireworks/" + fireworks});
+        });
+    });
+</script>
+{{/bodyEnd}}
+
+{{/layout}}

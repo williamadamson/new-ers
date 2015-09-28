@@ -1,0 +1,125 @@
+{{<layout}}
+
+{{$pageTitle}}Checking Service - HMRC{{/pageTitle}}
+{{$afterHeader}}
+		<!--<div class="outer-block">
+				<div class="inner-block">
+						<div class="phase-banner">
+								<p class="text">
+										<strong class="phase-tag">ALPHA</strong>
+										<span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+								</p>
+						</div>
+				</div>
+		</div>-->
+{{/afterHeader}}
+{{$content}}
+	{{>hmrc_banner}}
+	
+<main id="content" role="main">
+	<div class="outer-block">
+	 <div class="inner-block">
+	 	 {{>sub_header_CSOP}}
+	<!-- main content starts -->
+	 <h1 class="heading-small" style="text-align: right;">Company Share Option Plan (CSOP)<br>
+	 	Formatting error report</h1>
+	 	<h2 class="heading-medium">Your spreadsheet contains 11 formatting errors</h2>
+	 	<h3 class="heading-small">Summary of errors</h3>
+	 	 <p  class="text">
+          5 entries are formatted to the wrong number of decimal places<br>
+          2 entries have invalid National Insurance number formats<br>
+          2 entries have invalid yes/no information<br>
+          1 entry isn't in the expected number format<br>
+          1 item index is in the wrong sequential order<br>
+      </p>
+      <br>
+
+<h3 class="heading-small">Errors by sheet</h3>
+<table class="default">
+																									<tr>
+														<th colspan="3">Sheet: <span class="font-small">CSOP_OptionsGranted_V0</span></th>
+														</tr>
+													<tr>
+														<th>Column</th>
+														<th>Row</th>
+														<th>Error</th>
+													</tr>
+													
+													<tr>
+													<td>F</td><td>14</td><td>National Insurance number must be 2 letters, 6 numbers and a final letter.</td>
+												</tr>
+													<tr>
+													<td>G</td><td>16</td><td>Entry needs to be formatted to 2 decimal places.</td>
+												</tr>
+													<tr>
+													<td>I</td><td>24</td><td>Entry needs to be formatted to 4 decimal places.</td>
+												</tr>
+													<tr>
+													<td>K</td><td>15</td><td>Entry needs to be formatted to 4 decimal places.</td>
+												</tr>
+													<tr>
+													<td>L</td><td>17</td><td>Entry needs to be in number format.</td>
+												</tr>
+													<tr>
+													<td>M</td><td>21</td><td>Entry needs to be formatted to 2 decimal places.</td>
+												</tr>
+													<tr>
+													<td colspan="3"></td>
+												</tr>
+									
+													<tr>
+														<th colspan="3">Sheet: <span class="font-small"> SIP_OptionsRCL_V0</span></th>
+														</tr>
+													<tr>
+														<th>Column</th>
+														<th>Row</th>
+														<th>Error</th>
+													</tr>
+									
+													<tr>
+													<td>F</td><td>24</td><td>Item index isn’t in the original sequential order.</td>
+												</tr>
+													<tr>
+													<td>K</td><td>33</td><td>Entry has invalid yes/no information.</td>
+												</tr>
+													<tr>
+													<td>K</td><td>10013</td><td>Entry has invalid yes/no information.</td>
+												</tr>
+												<tr>
+													<td colspan="3"></td>
+												</tr>						
+													<tr>
+														<th colspan="3">Sheet: <span class="font-small">SIP_OptionsExercised_V0</span></th>
+														</tr>
+													<tr>
+													<th>Column</th>
+														<th>Row</th>
+														<th>Error</th>
+													</tr>
+												<tbody>
+													<tr>
+													<td>G</td><td>16</td><td>National Insurance number must be 2 letters, 6 numbers and a final letter.</td>
+												</tr>
+													<tr>
+													<td>J</td><td>16</td><td>Entry needs to be formatted to 2 decimal places.</td>
+												</tr>
+													
+											</table>
+
+								  <h2 class="heading-medium">What happens next?</h2>
+								
+							<p class="text">Correct the errors and <a href="scenario1_14_csv_ods_CSOP_ERRORS">upload your spreadsheet again or choose a different file</a>.</p>
+									
+</div>
+								
+</div>
+					
+ <!-- main content ends -->
+	</div>
+</div>
+</div>
+
+</main>
+{{/content}}
+
+{{/layout}}

@@ -1,0 +1,77 @@
+   <div>
+   <table class="progress">
+
+    <tr>
+      <td>1. Reportable events</td> 
+      <td>2. Company details</td> 
+      <td class="progress_active">3. Group plans</td> 
+      <td>4. Trustees</td> 
+      <td>5. Plan alterations</td> 
+      <td>6. Summary</td> 
+      <td>7. Confirmation</td>
+    </tr>
+
+  </table>
+
+  </div><br>
+    <span class="form-hint">Step 1 of 3</span>
+   <span class="heading-large">Group plans</span>
+   <p class="text">If the establishing company is part of a group of companies, the plan may be offered to the other companies within that group.</p>
+ <!-- radio buttons start -->
+         <div class="form-block">
+           <div class="text"><p class="text">
+             Is this a group plan?
+              </p></div>
+
+
+         
+ <fieldset class="inline">
+            <label class="block-label" for="yes">
+              <input id="yes" type="radio" value="yes" name="nominee-agent"></input>
+              Yes
+            </label>
+            <label class="block-label" for="no">
+              <input id="no" type="radio" value="no" name="nominee-agent"></input>
+              No
+            </label>
+          </fieldset>
+        </div>
+
+      
+
+        <div class="form-group">
+            <br>
+          <button id="next" class="button">Save and continue</button><br>
+           <a class="button-link" onclick="showDiv()" href="#">Save and exit</a>
+          <br><br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="3scenario1_11_company_SIP">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+</main>
+
+
+{{$endBody}}
+    <!--Load in jquery library-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+         //when go button is clicked create a function
+         $('#next').click(function() {
+              //if radio button yes is checked go to home '/'
+             if($('#yes').is(':checked')){
+               location.href = '3scenario1_12_manual_csv_SIP'
+             }
+             // else if radio button no is checked go to /summary page
+             else if ($('#no').is(':checked')){
+               location.href = '3scenario3_6_Trustee_Details_SIP'
+             }
+             // else if nothing is ticket return false and od nothing
+             else{
+               return false;
+             }
+         });
+    </script>
+{{/endBody}}
+

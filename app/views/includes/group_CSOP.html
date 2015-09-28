@@ -1,0 +1,60 @@
+   <h1 class="heading-large">Group schemes</h1>
+   <div class="text"><p class="text">
+              If the scheme organiser is part of a group of companies, the scheme may be offered to the other companies within that group. 
+              </p></div>
+   <p>Is this a group scheme?</p>
+ <!-- radio buttons start -->
+         <div class="form-block">
+           
+
+
+         
+ <fieldset class="inline">
+            <label class="block-label" for="yes">
+              <input id="yes" type="radio" value="yes" name="nominee-agent"></input>
+              Yes
+            </label>
+            <label class="block-label" for="no">
+              <input id="no" type="radio" value="no" name="nominee-agent"></input>
+              No
+            </label>
+          </fieldset>
+        </div>
+
+      
+
+        <div class="form-group">
+            <br>
+          <button id="next" class="button">Continue</button>
+          <br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="scenario1_11_company_CSOP">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+</main>
+
+
+{{$endBody}}
+    <!--Load in jquery library-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+         //when go button is clicked create a function
+         $('#next').click(function() {
+              //if radio button yes is checked go to home '/'
+             if($('#yes').is(':checked')){
+               location.href = 'scenario1_12_manual_csv_CSOP'
+             }
+             // else if radio button no is checked go to /summary page
+             else if ($('#no').is(':checked')){
+               location.href = 'scenario1_7_Alterations_CSOP'
+             }
+             // else if nothing is ticket return false and od nothing
+             else{
+               return false;
+             }
+         });
+    </script>
+{{/endBody}}
+

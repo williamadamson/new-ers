@@ -1,0 +1,34 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+  
+<main id="content" role="main">
+  <div class="outer-block">
+   <div class="inner-block">
+  <!-- main content starts -->
+ {{>sub_header_SIP_new}}
+ {{>what_SIP}}
+          
+            <p class="text">
+              <a class="button" href="3scenario2_2_Check_SIP">Save and continue</a>
+               <a class="button-link" onclick="showDiv()" href="#">Save and exit</a><br><br>
+           {{>exitbox}}
+            </p>    
+          </form>
+          <p class="text"><a href="3scenario2_0_Start_SIP">Back</a></p>
+
+
+ <!-- main content ends -->
+  </div>
+</div>
+</main>
+{{/content}}
+
+{{/layout}}

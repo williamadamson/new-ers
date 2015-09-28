@@ -1,0 +1,77 @@
+  {{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+  
+<main id="content" role="main">
+  <div class="outer-block">
+     <div class="inner-block">
+  <!-- main content starts -->
+  
+  
+               {{>sub_header_CSOP}}
+ 
+  <h1 class="heading-large">Add company details</h1>
+  <p>Find companies using the Company Registration Number (optional)</p>
+  <p class="heading-small">Company Registration Number (optional)</p>
+  <p>ABB123445 &nbsp; &nbsp; &nbsp; &nbsp; <a href="crn">Change this</a></p> 
+    <div class="form-block">
+
+
+              <legend></legend>
+             <form action="" method="post" class="form">
+            <fieldset>
+              <legend></legend>
+              
+              <!--div4  start--><div class="form-group">
+          <label for="company-name" class="form-label"><span class="bold-small">Company name</span></label>
+              <input type="text" class="form-control" id="company-name" value="Abacus Ltd">
+            <!--div4  end--></div>
+            <!--div5  start--><div class="form-group">
+            <label for="company-address1" class="form-label"><span class="bold-small">Address</span></label>
+              <input type="text" class="form-control" id="company-address1" value="Examples Street">
+            <label for="company-address2" class="form-label"></label>
+              <input type="text" class="form-control" id="company-address2" value="Some Town">
+              <label for="company-address3" class="form-label"></label>
+              <input type="text" class="form-control" id="company-address2">
+              <label for="company-address3" class="form-label"></label>
+              <input type="text" class="form-control" id="company-address2">
+            <!--div5  end--></div>
+            <div class="form-group">
+          <label for="postcode-name" class="form-label"><span class="bold-small">Postcode (optional)</span></label>
+              <input type="text" class="form-control-1-8" id="postcode-name" maxlength="8"  value="ne99 1xx">
+            <!--div7  end--></div> 
+            <!--div6  start--><div class="form-group">
+          <label for="country-name" class="form-label"><span class="bold-small">Country (optional)</span> </label>
+              <input type="text" class="form-control-1-4" id="country-name"  value="UK">
+            </div> <!--div6  end-->
+            <!--div7  start-->
+            
+            <p class="text"></p>
+            <!--div8  start-->
+            <!--div10  start--><div class="form-group">
+          <label for="ctr-name" class="form-label"><span class="bold-small">Corporation Tax Reference (optional) (optional)</span>
+          <span class="text form-hint">It's a 10 digit number issued by HM Revenue and Customs, usually used in relation to company tax returns. For example, 1234567890.</span></label>
+              <input type="text" class="form-control-1-4" id="ctr-name">
+            <p class="text"></p>
+      
+          </details> 
+        </div>   <!--div10  ends--> 
+
+          <a class="button" id="btnValidationNext" type="button" href="">Continue</a>
+          <p class="text"><a href="crn">Back</a></p>
+
+ <!-- main content ends -->
+</div>
+</div>
+  </div>
+</main>
+{{/content}}
+
+{{/layout}}

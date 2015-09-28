@@ -1,0 +1,79 @@
+  <div>
+
+  <table class="progress">
+
+    <tr>
+      <td class="progress_active">1. Reportable events</td> 
+      <td>2. Company details</td> 
+      <td>3. Group plans</td> 
+      <td>4. Trustees</td> 
+      <td>5. Plan alterations</td> 
+      <td>6. Summary</td> 
+      <td>7. Confirmation</td>
+    </tr>
+
+  </table>
+
+  </div><br>
+
+  <span class="heading-large">Reportable events</span>
+ <!-- radio buttons start -->
+          <p class="text">Have shares been awarded or have shares ceased to be part of the plan during the tax year?</p>
+                  
+ <!-- <details>
+                  <ul class="text list-bullet"><li>select 'yes' if options have been granted, exercised, released (including exchanges), lapsed or cancelled during the tax year</li>
+                  <li>select 'no' if no options have been granted, exercised, released (including exchanges), lapsed or cancelled during the tax year</li></ul>
+                   <div class="form-block">
+         
+            <summary><span class="summary">What are reportable events?</span></summary>
+            <div class="panel-indent">
+              <p class="text">
+               Some information about reportable events.
+              </p>
+            </div>
+          </details>-->
+<fieldset class="inline">
+ <label class="block-label" for="radio-1">
+        <input id="yes" type="radio" name="radio-group" value="Yes">Yes</label>
+  
+        <label class="block-label" for="radio-2">
+        <input id="no" type="radio" name="radio-group" value="No">No (nil return)</label>
+     </fieldset>
+   
+
+      
+ 
+        <div class="form-group">
+            <br>
+          <button id="next" class="button">Continue</button>
+          <br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="2scenario1_0_Start_SIP">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+</main>
+
+
+{{$endBody}}
+    <!--Load in jquery library-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+         //when go button is clicked create a function
+         $('#next').click(function() {
+              //if radio button yes is checked go to home '/'
+             if($('#yes').is(':checked')){
+               location.href = '2scenario1_14_csv_ods_SIP'
+             }
+             // else if radio button no is checked go to /summary page
+             else if ($('#no').is(':checked')){
+               location.href = '2scenario1_11_company_SIP'
+             }
+             // else if nothing is ticket return false and od nothing
+             else{
+               return false;
+             }
+         });
+    </script>
+{{/endBody}}

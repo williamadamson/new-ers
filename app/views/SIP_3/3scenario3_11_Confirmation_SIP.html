@@ -1,0 +1,75 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+	
+
+<main id="content" role="main">
+	  <div class="outer-block">
+	 <div class="inner-block">
+	<!-- main content starts -->
+
+		<div>
+   <table class="progress">
+
+    <tr>
+      <td>1. Reportable events</td> 
+      <td>2. Company details</td> 
+      <td>3. Group plans</td> 
+      <td>4. Trustees</td> 
+      <td>5. Plan alterations</td> 
+      <td>6. Summary</td> 
+      <td class="progress_active">7. Confirmation</td>
+    </tr>
+
+  </table>
+
+  </div><br>
+		<span class="form-hint">Step 1 of 1</span>
+		<span class="heading-large">Confirmation</span>
+			{{>sub_header_SIP_new}}
+		
+		<div class="confirmation">
+					<h1 class="heading-medium"><img src="/public/icons/tick.png" style="padding: 0 10px 0 0" alt="">Your Share Incentives Plan annual return has been submitted for the tax year 2014 to 2015</h1>	
+					<h2 class="heading-medium">Submission reference code: XY11 0000 0608 980 TEST</h2>
+							<h3 class="heading-small">Date and time submitted: 15 July 2015, 3:54 pm</h3>			
+							</div>
+								
+							<p class="text"></p>
+							<!--<div class="icon-important" style="display: inline-block; float: left"></div>
+							<div style="display: inline-block; padding-left: 10px; float: left">
+							<p class="text bold-small">Download and save these confirmation details for your records.</p>
+						</div>-->
+							<p class="form-hint">You can download confirmation as a PDF, it will open in a new window or tab.</p>
+							<div class="bottom-grey">
+								<a class="button medium" id="btnValidation" type="button" href="http://ers-return.herokuapp.com/public/pdf/receipt_SIP.pdf" target="_blank" title="Opens new window">Download confirmation (PDF, 500KB)</a>
+							
+							</div>								
+						<div>
+							<p class="text"></p>
+							<h2 class="heading-medium">What happens next?</h2>
+									<p class="text">Allow 48 hours before you use HMRC Online services to check the status of your submission in Employment Related Securities (View schemes and arrangements).
+
+							</div>
+
+							<p class="editCompanyDetails"><a href="../scenarios">Submit another return</a></p>
+
+							<div><p class="text"><a class="button" href="../launch">Finish</a></p></div>
+
+							
+
+ <!-- main content ends -->
+	</div>
+</div>
+
+
+</main>
+{{/content}}
+
+{{/layout}}

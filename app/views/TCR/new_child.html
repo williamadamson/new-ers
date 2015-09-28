@@ -1,0 +1,81 @@
+{{<layout}}
+
+{{$pageTitle}}Tax Credits{{/pageTitle}}
+{{$afterHeader}}
+	 
+{{/afterHeader}}
+
+
+{{$content}}
+	{{>alpha_banner}}
+	{{>hmrc_banner_TCR}}
+	<!-- main content starts -->
+<main id="content" role="main">
+	<div class="outer-block">
+	<div class="inner-block">
+	
+					<h1 class="heading-large">Add a new child</h1>
+		<form action="" method="post" class="form">
+						<fieldset class="inline">
+							<legend></legend>
+							
+					<div class="form-group">
+					<label for="company-name" class="form-label"><span class="bold-small">Child's name</span></label>
+							<input type="text" class="form-control" id="company-name">
+					 </div>
+						</fieldset>
+							 <fieldset class="inline">
+							<legend></legend>
+							
+				 <div class="form-group">
+					<label for="company-name" class="form-label"><span class="bold-small">Date of Birth</span></label>
+							<input type="text" class="form-control" id="company-name">
+			 </div>
+						</fieldset>
+
+							<fieldset class="inline">
+
+		<legend class="form-label"><span class="bold-small">Have you been responsible for them from birth?</span></legend>
+
+		<div class="form-group form-group-compound">
+
+			<label class="block-label" for="radio-inline-1">
+				<input id="radio-inline-1" name="radio-inline-group1" value="Yes" type="radio"> Yes
+			</label>
+
+			<label class="block-label" for="radio-inline-2">
+				<input id="radio-inline-2" name="radio-inline-group1" value="No" type="radio"> No
+			</label>
+		
+	</div></fieldset>
+			 <fieldset class="inline">
+
+		<legend class="form-label"><span class="bold-small">Are they disabled?</span></legend>
+
+		<div class="form-group form-group-compound">
+
+			<label class="block-label" for="radio-inline-3">
+				<input id="radio-inline-3" name="radio-inline-group2" value="Yes" type="radio"> Yes
+			</label>
+
+			<label class="block-label" for="radio-inline-4">
+				<input id="radio-inline-4" name="radio-inline-group2" value="No" type="radio"> No
+			</label>
+
+
+		</div>
+
+	</fieldset>
+
+ <p><a class="button" href="new_child_summary">Continue</a></p>
+</form>
+ <p class="text"><a href="children">Back</a></p>
+
+	 <!-- main content ends -->
+	</div>
+</div>
+
+</main>
+{{/content}}
+
+{{/layout}}

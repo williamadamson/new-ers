@@ -1,0 +1,80 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+	
+<main id="content" role="main">
+	 <div class="outer-block">
+	 <div class="inner-block">
+	<!-- main content starts -->
+	{{>sub_header_SIP_new}}
+    <div>
+   <table class="progress">
+
+    <tr>
+      <td>1. Reportable events</td> 
+      <td>2. Company details</td> 
+      <td>3. Group plans</td> 
+      <td class="progress_active">4. Trustees</td> 
+      <td>5. Plan alterations</td> 
+      <td>6. Summary</td> 
+      <td>7. Confirmation</td>
+    </tr>
+
+  </table>
+
+  </div><br>
+	 <span class="form-hint">Step 2 of 2</span>
+	<span class="heading-large">Trustees of this Share Incentive Plan</span>
+		<div class="form-block">
+					 <!-- help text -->
+			<p class="text"><a href="3scenario1_5_Trustee_Details_SIP">Add a trustee</a> <p class="text">	
+		<table cellspacing="0" class="default">
+												<thead>
+													<tr>
+														
+														<th>Name</th>
+														<th>Address</th>
+														<th></th>
+													</tr>
+												</thead>
+												<tbody id="summary">
+													<tr>
+													<td>Mark E Smith</td><td>Gloucester House<br>Springfield Road<br>Newcastle upon Tyne<br>Tyne and Wear<br>NE1 1AA.</td><td><a class="editCompanyDetails" href="3scenario1_5_Trustee_Details_SIP">Change</a><br><br><a class="deleteCompanyDetails" ref="1" href="#">Delete</a></td>
+												</tr>
+												<!--<tr>
+													<td>2</td><td>Kim Deal</td><td>Building Name<br># Street Name<br>Area<br>Town<br>NE1 1AA.</td><td><a class="editCompanyDetails" href="3scenario1_5_Trustee_Details_SIP">Change this</a><br><br><a class="deleteCompanyDetails" ref="1" href="#">Delete</a></td>
+												</tr>-->
+													<tr id="companyDetails">
+														<td colspan="6"><a href="3scenario1_5_Trustee_Details_SIP"><span class="font-small">Add a trustee</span></a></td>
+													</tr></tbody>
+											</table>
+<p class="text"></p>
+
+<form action="" method="post" class="form">
+						<fieldset>
+							<legend></legend>
+							
+			</fieldset>
+					<a class="button" href="3scenario1_7_Alterations_SIP">Save and continue</a>
+					 <a class="button-link" onclick="showDiv()" href="#">Save and exit</a><br><br>
+           {{>exitbox}}
+						  
+					</form>
+					<p class="text"><a href="3scenario1_5_Trustee_Details_SIP">Back</a></p>
+
+
+ <!-- main content ends -->
+</div>
+	</div>
+</div>
+</main>
+{{/content}}
+
+{{/layout}}

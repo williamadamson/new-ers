@@ -1,0 +1,62 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+  
+<main id="content" role="main">
+  <div class="outer-block">
+     <div class="inner-block">
+  <!-- main content starts -->
+     {{>sub_header_CSOP}}
+  
+ <h1 class="heading-large">Select scheme alterations and variations</h1>
+<p class="text">What alterations and/or variations have been made?</p>
+ <!-- radio buttons start -->
+          <div class="form-block">
+           <form action="" method="post" class="form">
+           <fieldset>
+              <div class="current-question" id="current-question">
+                <!--h2>Alterations / amendments made to the scheme or to options in the tax year</h2-->                 
+                <p class="text">Select all that apply.</p>
+              </div>
+     
+            <div class="form-group">
+                <p class="option group">
+                  <label class="block-label" for="amendscheckbox1"><input type="checkbox" id="amendscheckbox1" value="1"> Alterations to the terms of an existing option (other than by a variation in the share capital of which the shares form a part)</label>
+                  <label class="block-label" for="amendscheckbox2"><input type="checkbox" id="amendscheckbox2" value="2"> Alterations to the eligibility of individuals to join the scheme</label>
+                  <label class="block-label" for="amendscheckbox3"><input type="checkbox" id="amendscheckbox3" value="3"> Alterations arising from an exchange of share options on a company reorganisation</label>
+                  <label class="block-label" for="amendscheckbox4"><input type="checkbox" id="amendscheckbox4" value="4"> A variation in the share capital of which the shares form a part</label>
+                
+                  <label class="block-label" for="amendscheckbox7"><input type="checkbox" id="amendscheckbox7" value="7"> Other</label>
+                </p>
+              </div>
+              <div class="icon-important"></div>
+              <div style="display: inline-block; float: left; width: 60%">
+               <span class="bold-small">I declare that the alteration or the variation in any share capital, hasn't caused the requirements of parts 2-6 of Schedule 4 Income Tax (Earnings and Pensions) Act 2003 not to be met in relation to the Company Share Option Plan.</span>
+                      </div>       
+  
+              <div class="form-group">
+                <br>
+                <br>
+                <a class="button" id="btnValidationNext" type="button" href="scenario3_10_Summary_CSOP">I accept - continue</a>
+                <p class="text"><a href="current_version_page1">Back</a></p>
+              </div>                           
+            </fieldset>
+           
+            </form>
+          
+
+ <!-- main content ends -->
+</div>
+</div>
+  </div>
+</main>
+{{/content}}
+
+{{/layout}}

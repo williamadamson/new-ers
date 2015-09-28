@@ -1,0 +1,53 @@
+   <h1 class="heading-large">Group scheme details</h1>
+   <p>How do you want to add the group scheme details?</p>
+ <!-- radio buttons start -->
+         
+
+     
+       
+
+      
+        <label class="block-label" for="radio-1">
+        <input id="yes" type="radio" name="radio-group" value="Northern Ireland">Upload a comma separated values (CSV, .csv) file</label>
+  
+        <label class="block-label" for="radio-2">
+        <input id="no" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">Manually enter the company details</label>
+     
+
+      
+ 
+        <div class="form-group">
+            <br>
+          <button id="next" class="button">Continue</button>
+          <br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="scenario1_2_Group_CSOP">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+</main>
+
+
+{{$endBody}}
+    <!--Load in jquery library-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+         //when go button is clicked create a function
+         $('#next').click(function() {
+              //if radio button yes is checked go to home '/'
+             if($('#yes').is(':checked')){
+               location.href = 'scenario1_17_upload_CSOP_CSV'
+             }
+             // else if radio button no is checked go to /summary page
+             else if ($('#no').is(':checked')){
+               location.href = 'scenario1_13_company_details_CSOP'
+             }
+             // else if nothing is ticket return false and od nothing
+             else{
+               return false;
+             }
+         });
+    </script>
+{{/endBody}}
+

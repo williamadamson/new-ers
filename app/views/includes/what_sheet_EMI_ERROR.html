@@ -1,0 +1,59 @@
+ <h1 class="heading-large">Choose your file type</h1>
+ <!-- radio buttons start -->
+          <p class="text">Which type of file are you using to report events?</p>
+                  
+
+                   <div class="form-block">
+          <!-- <details>
+            <summary><span class="summary">What are reportable events?</span></summary>
+            <div class="panel-indent">
+              <p class="text">
+               Some information about reportable events.
+              </p>
+            </div>
+          </details>-->
+
+ <label class="block-label" for="radio-1">
+        <input id="yes" type="radio" name="radio-group" value="Yes">Comma separated values (CSV, .csv)</label>
+  
+        <label class="block-label" for="radio-2">
+        <input id="no" type="radio" name="radio-group" value="No">OpenDocument Spreadsheet (ODS, .ods)</label>
+   
+
+      
+      
+ 
+        <div class="form-group">
+            <br>
+          <button id="next" class="button">Continue</button>
+          <br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="scenario1_0_Start_EMI_ERROR">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+</main>
+
+
+{{$endBody}}
+    <!--Load in jquery library-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+         //when go button is clicked create a function
+         $('#next').click(function() {
+              //if radio button yes is checked go to home '/'
+             if($('#yes').is(':checked')){
+               location.href = 'scenario1_18_upload_EMI_CSV_ERROR'
+             }
+             // else if radio button no is checked go to /summary page
+             else if ($('#no').is(':checked')){
+               location.href = 'scenario1_15_ods_EMI_ERROR'
+             }
+             // else if nothing is ticket return false and od nothing
+             else{
+               return false;
+             }
+         });
+    </script>
+{{/endBody}}

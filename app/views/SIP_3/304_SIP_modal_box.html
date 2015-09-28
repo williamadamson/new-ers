@@ -1,0 +1,119 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+
+
+
+<main id="content" role="main">
+<div class="outer-block">
+<div class="inner-block">
+  
+{{>sub_header_CSOP}}
+
+<style>
+
+  .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+
+.modal {
+    /* some styles to position the modal at the center of the page */
+   
+position: fixed;
+top: 25%;
+left: 30%;
+width: 60%;
+max-width: 630px;
+min-width: 320px;
+height: auto;
+z-index: 2000;
+
+background-color: #fff;
+border-style: solid;
+border-width: 1px;
+border-color: #0b0c0c;
+padding: 20px 30px 40px 30px;
+
+
+}
+
+</style>
+
+
+
+<div class="overlay"></div>
+<div class="modal">
+
+    <div class="md-content">
+       <h1 class="heading-medium">Your progress has been saved</h1>
+      <div>
+        <p>You can close your browser at any time, but your progress will only be saved up to the point where you last clicked ‘Save and continue’.</p>
+        <p>An unfinished annual return is only stored for 14 days from the last time it was saved.</p><br>
+        <a class="button" href="3scenario1_11_company_SIP">Continue</a>
+        </div>
+    </div>
+
+
+</div>
+
+{{>SIP_company_details_modal}}
+
+  
+ 
+</form>
+<p class="text"><a href="#">Back</a></p></div>
+
+
+</div>
+</div>
+</main>
+{{/content}}
+
+{{/layout}}
+
+<script>
+
+$("#radio-inline-2").on('click', function() {
+  $("#country-name").show();
+  $("#crn").hide();
+  $("#ctr").hide();
+  $("#zip").show();
+
+
+
+ 
+});
+
+</script>
+
+<script>
+
+$("#country-name").hide();
+$("#zip").hide();
+
+
+$("#radio-inline-1").on('click', function() {
+  $("#country-name").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").hide();
+
+ 
+});
+
+</script>

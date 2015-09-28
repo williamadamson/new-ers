@@ -1,0 +1,61 @@
+   <h1 class="heading-large">Companies included in this return</h1>
+ <!-- radio buttons start -->
+         <p class="text">If the company that set up this scheme or arrangement is part of a group of companies, the return may include the shares and employees of any of the companies within that group.</p>
+         <div class="form-block">
+           <div class="text"><p class="text">Are any other companies included in this return?</p></div>
+           <!--<details>
+            <summary><span class="summary">What is a group plan?</span></summary>
+            <div class="panel-indent">
+              <p class="text">
+               Some information about group plans.
+              </p>
+            </div>
+          </details>-->
+
+<fieldset class="inline">
+    <label class="block-label" for="radio-inline-1">
+      <input id="yes" type="radio" name="radio-inline-group" value="yes" >
+      Yes
+    </label>
+    <label class="block-label" for="radio-inline-2">
+      <input id="no" type="radio" name="radio-inline-group" value="no">
+      No
+    </label>
+  </fieldset><br>
+
+      
+ 
+        <div class="form-group">
+            <br>
+          <button id="next" class="button">Continue</button>
+          <br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="scenario1_11_company_OTHER">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+</main>
+
+
+{{$endBody}}
+    <!--Load in jquery library-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+         //when go button is clicked create a function
+         $('#next').click(function() {
+              //if radio button yes is checked go to home '/'
+             if($('#yes').is(':checked')){
+               location.href = 'scenario1_12_manual_csv_OTHER'
+             }
+             // else if radio button no is checked go to /summary page
+             else if ($('#no').is(':checked')){
+               location.href = 'scenario1_9_Summary_OTHER'
+             }
+             // else if nothing is ticket return false and od nothing
+             else{
+               return false;
+             }
+         });
+    </script>
+{{/endBody}}

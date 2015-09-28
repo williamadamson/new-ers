@@ -1,0 +1,58 @@
+  {{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+  
+<main id="content" role="main">
+  <div class="outer-block">
+     <div class="inner-block">
+  <!-- main content starts -->
+  
+  
+               {{>sub_header_CSOP}}
+ 
+  <h1 class="heading-large">Add company details</h1>
+    <div class="form-block">
+             
+<form action="" method="post" class="form">
+
+ 
+            <fieldset>
+              <legend></legend>
+            <br>
+            <br>
+              <!--div4  start--><div class="form-group">
+          <label for="company-name" class="form-label"><span class="bold-small">Company name</span></label>
+              <input type="text" class="form-control" id="company-name">
+            <!--div4  end--></div>
+      
+          
+        <div class="form-group">
+            <label for="crn-name" class="form-label"><span class="bold-small">Company Registration Number (optional) (optional)</span></label>
+            <span class="text form-hint">It's an 8 digit number or 2 letters followed by a 6 digit number, allocated by Companies House. For example, 12345678 or AB123456.</span></label>
+              <input type="text" class="form-control-1-4" id="crn-name">
+        </div>   <!--div10  ends--> 
+<p><a href="minimalv2_pages">Add another company</a></p>
+      <a class="button" id="btnValidationNext" type="button" href="minimalv2_pages2">Continue</a>
+                <p class="text"><a href="minimalv2_pages_start">Back</a></p>
+              </div>                           
+            </fieldset>
+           
+            </form>
+
+          
+
+ <!-- main content ends -->
+</div>
+</div>
+  </div>
+</main>
+{{/content}}
+
+{{/layout}}

@@ -1,0 +1,64 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+	
+<main id="content" role="main">
+<div class="outer-block">
+<div class="inner-block">
+	
+{{>sub_header_CSOP}}
+{{>CSOP_company_details}}
+	
+<p class="text">
+  <a class="button" href="scenario1_2_Group_CSOP">Continue</a>
+</p>    
+
+</form>
+<p class="text"><a href="#">Back</a></p></div>
+
+
+</div>
+</div>
+</main>
+{{/content}}
+
+{{/layout}}
+
+<script>
+
+$("#radio-inline-2").on('click', function() {
+  $("#country-name").show();
+  $("#crn").hide();
+  $("#ctr").hide();
+  $("#zip").show();
+
+
+
+ 
+});
+
+</script>
+
+<script>
+
+$("#country-name").hide();
+$("#zip").hide();
+
+
+$("#radio-inline-1").on('click', function() {
+  $("#country-name").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").hide();
+
+ 
+});
+
+</script>

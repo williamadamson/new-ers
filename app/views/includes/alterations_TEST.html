@@ -1,0 +1,66 @@
+
+  <!-- main content starts -->
+   <h1 class="heading-large">Scheme alterations and variations</h1>
+   <p="text">Have alterations been made to 'key features' of this scheme or has there been a variation in the share capital?</p>
+ <!-- radio buttons start -->
+          <div class="form-block">
+            <div class="text panel-indent"><p class="text">
+           A key feature is anything that's necessary for the scheme to meet its legal requirements, for example, the eligibility of individuals to take part and the eligibility of the shares to be used.
+              </p></div>
+           <!--<details>
+            <summary><span class="summary">What do we mean by alterations?</span></summary>
+            <div class="panel-indent">
+              <p class="text">
+               Some information about alterations or amends.
+              </p>
+            </div>
+          </details>-->
+ 
+ <fieldset class="inline">
+ <label class="block-label" for="radio-1">
+        <input id="yes" type="radio" name="radio-group" value="Yes">Yes</label>
+  
+        <label class="block-label" for="radio-2">
+        <input id="no" type="radio" name="radio-group" value="No">No</label>
+     </fieldset>
+
+    
+
+      
+
+        <div class="form-group">
+            <br>
+          <button id="next" class="button">Continue</button>
+          <br>
+          <a class="button-link" onclick="history.back(-1); return false; " href="/scenarios">Back</a>
+        </div>
+ 
+    </div>
+  </div>
+
+</main>
+
+
+{{$endBody}}
+    <!--Load in jquery library-->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+    <script type="text/javascript">
+         //when go button is clicked create a function
+         $('#next').click(function() {
+              //if radio button yes is checked go to home '/'
+             if($('#yes').is(':checked')){
+               location.href = 'reworded_version_page2'
+             }
+             // else if radio button no is checked go to /summary page
+             else if ($('#no').is(':checked')){
+               location.href = '#'
+             }
+             // else if nothing is ticket return false and od nothing
+             else{
+               return false;
+             }
+         });
+    </script>
+{{/endBody}}
+
+          

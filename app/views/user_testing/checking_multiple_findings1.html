@@ -1,0 +1,73 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+
+
+
+<main id="content" role="main">
+   
+<div class="outer-block">
+  <div class="inner-block">
+  <!-- main content starts -->
+   {{>sub_header_CSOP}}
+ <h1 class="heading-large">Upload your spreadsheets</h1>
+ <!-- radio buttons start -->
+ <p class="text">What file type are your spreadsheets saved as?</p>
+       <!--<div class="text panel-indent"><p class="text">
+
+              Your spreadsheets need to have been saved as Open Document Spreadsheet (ODS),  Comma Separated Values (CSV) or Microsoft Excel spreadsheet (XLS) files.
+              </p></div>-->
+                   <div class="form-block">
+          <!-- <details>
+            <summary><span class="summary">What are reportable events?</span></summary>
+            <div class="panel-indent">
+              <p class="text">
+               Some information about reportable events.
+              </p>
+            </div>
+          </details>-->
+<form action="checking_multiple1" method="get" class="form">
+            <fieldset>
+              <legend></legend>
+              
+              <div class="form-group">
+             
+
+                <label for="radio-1" class="block-label">
+                  <input id="radio-1" type="radio" name="radio-group" value="ODS">
+                  Open Document Spreadsheet (ODS)
+                </label>
+                <label for="radio-2" class="block-label">
+                  <input id="radio-2" type="radio" name="radio-group" value="CSV">
+                 Comma Separated Values (CSV)<br>
+                </label>
+                   <label for="radio-3" class="block-label">
+                  <input id="radio-3" type="radio" name="radio-group" value="XLS">
+                  Microsoft Excel spreadsheet (XLS)<br>
+                </label>
+                </div>
+            </fieldset>
+         
+          <br>
+              <button class="button" type="submit">Continue</button>
+            </p>    
+          </form>
+          <p class="text"><a href="">Back</a></p>
+        </div>
+            <p class="text"></p>
+          </div>
+
+ <!-- main content ends -->
+ </div>
+  </div>
+</main>
+{{/content}}
+
+{{/layout}}
