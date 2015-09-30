@@ -1,32 +1,56 @@
 {{<layout}}
 
-{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
-{{$afterHeader}}
-   
-{{/afterHeader}}
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
 
 {{$content}}
-  {{>alpha_banner}}
-  {{>hmrc_banner}}
-	
-<main id="content" role="main">
-	<!--div1 start--><div class="outer-block">
-	 <!--div2 start--><div class="inner-block">
-	<!-- main content starts -->
- {{>sub_header_CSOP}}
- {{>company_details}}
-	
-			<a class="button" href="scenario1_16_CSOP_company_summary">Continue</a>
-		</fieldset>
-						</p>    
-					</form>
-					<p class="text"><a href="scenario1_12_manual_csv_CSOP">Back</a></p>
 
-</div>
- <!-- main content ends -->
-	<!--div2 end--></div>
-<!--div1 end--></div>
-</main>
+        <main id="content" role="main">
+           {{>includes/alpha_banner}}
+            {{>CSOP/includes/sub_header_CSOP}}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+                <h1 class="heading-xlarge">Add scheme organiser details</h1>
+
+ 					      {{>CSOP/includes/company_details}}
+
+  					<a href="javascript:history.go(-1)">Back</a>
+                </div>
+            </div>
+
+        </main>
+
 {{/content}}
 
 {{/layout}}
+
+<script>
+$("#countryname").hide();
+$("#radio-inline-1").on('click', function() {
+  $("#country-name").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-2").on('click', function() {
+  $("#countryname").show();
+  $("#crn").hide();
+  $("#ctr").hide();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-1").on('click', function() {
+  $("#countryname").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").show();
+});
+</script>

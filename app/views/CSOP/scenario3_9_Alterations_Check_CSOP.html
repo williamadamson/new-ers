@@ -1,37 +1,28 @@
 {{<layout}}
 
-{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
-{{$afterHeader}}
-   
-{{/afterHeader}}
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
 
 {{$content}}
-  {{>alpha_banner}}
-  {{>hmrc_banner}}
-  
-<main id="content" role="main">
-  <div class="outer-block">
-     <div class="inner-block">
-  <!-- main content starts -->
-     {{>sub_header_CSOP}}
-  {{>alterations_check_CSOP}}
-  
-              <div class="form-group">
-                <br>
-                <br>
-                <a class="button" id="btnValidationNext" type="button" href="scenario3_10_Summary_CSOP">Accept and continue</a>
-                <p class="text"><a href="scenario1_7_Alterations_CSOP">Back</a></p>
-              </div>                           
-            </fieldset>
-           
-            </form>
-          
 
- <!-- main content ends -->
-</div>
-</div>
-  </div>
-</main>
+        <main id="content" role="main">
+           {{>includes/alpha_banner}}
+            {{>CSOP/includes/sub_header_CSOP}}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+                	<h1 class="heading-xlarge">Select scheme alterations and variations</h1>
+
+                    {{>CSOP/includes/alterations_check_CSOP}}
+
+
+                <a href="javascript:history.go(-1)">Back</a>
+                </div>
+            </div>
+
+        </main>
+
 {{/content}}
-
 {{/layout}}

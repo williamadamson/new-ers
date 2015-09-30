@@ -1,32 +1,28 @@
 {{<layout}}
 
-{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
-{{$afterHeader}}
-   
-{{/afterHeader}}
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
 
 {{$content}}
-  {{>alpha_banner}}
-  {{>hmrc_banner}}
 
-<main id="content" role="main">
-   
-<div class="outer-block">
-  <div class="inner-block">
-  <!-- main content starts -->
-{{>sub_header_CSOP}}
-  {{>check_CSOP}}
-                     <p class="text">
-              <a class="button" href="scenario1_11_company_CSOP">Upload spreadsheet</a>
-            </p>    
-          </form>
-          <p class="text"><a href="scenario1_14_csv_ods_CSOP">Back</a></p>
+        <main id="content" role="main">
+           {{>includes/alpha_banner}}
+            {{>CSOP/includes/sub_header_CSOP}}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+                	<h1 class="heading-xlarge">Upload your spreadsheet</h1>
+                    {{>CSOP/includes/check_CSOP}}
 
 
- <!-- main content ends -->
- </div>
-  </div>
-</main>
+
+                    <a href="javascript:history.go(-1)">Back</a>
+                </div>
+            </div>
+
+        </main>
+
 {{/content}}
-
 {{/layout}}

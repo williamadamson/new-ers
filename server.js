@@ -30,7 +30,19 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
 
-app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico'))); 
+app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico')));
+
+// Enable POST body parser
+app.use(express.bodyParser());
+
+// Session bumpf
+app.use(express.cookieParser());
+app.use(express.cookieSession({
+    secret  : "Stays my secret",
+    maxAge  : new Date(Date.now() + (3600000)), //1 Hour
+    expires : new Date(Date.now() + (3600000)), //1 Hour
+    cookie  : { maxAge: (3600000) }
+}));
 
 
 // send assetPath to all views
@@ -50,7 +62,9 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 
 	var path = (req.params[0]);
 
-	res.render(path, function(err, html) {
+	res.render(path, req.session.erspage, function(err, html) {
+
+    if (typeof req.session.erspage === "undefined") req.session.erspage = {"pending" : {} };
 		if (err) {
 			console.log(err);
 			res.send(404);

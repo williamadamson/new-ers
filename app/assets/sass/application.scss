@@ -35,3 +35,25 @@
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
 // either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
+
+
+
+
+.form-label-bold {
+  @include bold-19;
+  margin-bottom: 10px;
+  .form-hint {
+    @include core-19;
+  }
+}
+.list-bullet{
+  margin-bottom: 0;
+}
+
+.panel-indent{
+  margin-bottom: 2em;
+}
+
+.inline {
+  margin-bottom: 2em;
+}
