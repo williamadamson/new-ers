@@ -1,28 +1,30 @@
 {{<layout}}
 
 {{$pageTitle}}
-	Submit your ERS annual return
+    Submit your ERS annual return
 {{/pageTitle}}
 
 {{$content}}
 
-		<main id="content" role="main">
-		   {{>includes/alpha_banner}}
-			{{>CSOP/includes/sub_header_CSOP}}
+        <main id="content" role="main">
+           {{>includes/alpha_banner}}
 
-			<div class="grid-row">
-				<div class="column-two-thirds">
 
-          <h1 class="heading-xlarge">Add scheme organiser details</h1>
-					{{>CSOP/includes/CSOP_company_details}}
+            <div class="grid-row">
+                <div class="column-two-thirds">
 
-					<a href="javascript:history.go(-1)">Back</a>
-				</div>
-			</div>
+                <h1 class="heading-xlarge">Add scheme organiser details</h1>
 
-		</main>
+ 					      {{>CSOP/includes/company_details}}
+
+  					<a href="javascript:history.go(-1)">Back</a>
+                </div>
+            </div>
+
+        </main>
 
 {{/content}}
+
 {{/layout}}
 
 <script>

@@ -10,14 +10,14 @@ module.exports = {
     });
 
     // ERS CSOP
-    app.post('/CSOP/scenario1_1_What_CSOP', function (req, res) {
+    app.post('/CSOP/reportable-events', function (req, res) {
         postToSession(req, res);
         var data = req.body;
         var url;
         if (data['radio-group'] === 'Yes') {
-            url = '/CSOP/scenario1_14_csv_ods_CSOP';
+            url = '/CSOP/choose-file-type';
         } else if (data['radio-group'] === 'No') {
-            url = '/CSOP/scenario1_11_company_CSOP';
+            url = '/CSOP/add-scheme-organiser';
         } else {
             url = '';
         }
@@ -25,42 +25,42 @@ module.exports = {
     });
 
 
-    app.post('/CSOP/scenario1_14_csv_ods_CSOP', function (req, res) {
+    app.post('/CSOP/choose-file-type', function (req, res) {
         postToSession(req, res);
         var data = req.body;
         var url;
         if (data['radio-group'] === 'csv') {
-            url = '/CSOP/scenario1_18_upload_CSOP_CSV';
+            url = '/CSOP/upload-file';
         } else if (data['radio-group'] === 'ods') {
-            url = '/CSOP/scenario1_15_ods_CSOP';
+            url = '/CSOP/upload-spreadsheet';
         } else {
             url = '';
         }
         res.redirect(url);
     });
 
-    app.post('/CSOP/scenario1_2_Group_CSOP', function (req, res) {
+    app.post('/CSOP/group-schemes', function (req, res) {
         postToSession(req, res);
         var data = req.body;
         var url;
         if (data['nominee-agent'] === 'Yes') {
-            url = '/CSOP/scenario1_12_manual_csv_CSOP';
+            url = '/CSOP/scheme-details';
         } else if (data['nominee-agent'] === 'No') {
-            url = '/CSOP/scenario1_7_Alterations_CSOP';
+            url = '/CSOP/scheme-alterations-variations';
         } else {
             url = '';
         }
         res.redirect(url);
     });
 
-    app.post('/CSOP/scenario1_12_manual_csv_CSOP', function (req, res) {
+    app.post('/CSOP/scheme-details', function (req, res) {
         postToSession(req, res);
         var data = req.body;
         var url;
         if (data['radio-group'] === 'csv') {
-            url = '/CSOP/scenario1_17_upload_CSOP_CSV';
+            url = '/CSOP/upload-group-scheme-file';
         } else if (data['radio-group'] === 'manual') {
-            url = '/CSOP/scenario1_13_company_details_CSOP';
+            url = '/CSOP/add-group-scheme-organiser';
         } else {
             url = '';
         }
@@ -72,28 +72,61 @@ module.exports = {
         var data = req.body;
         var url;
         if (data['radio-group'] === 'Yes') {
-            url = '/CSOP/scenario3_9_Alterations_Check_CSOP';
+            url = '/CSOP/scheme-alterations';
         } else if (data['radio-group'] === 'No') {
-            url = '/CSOP/scenario3_10_Summary_CSOP';
+            url = '/CSOP/summary-check';
         } else {
             url = '';
         }
         res.redirect(url);
     });
 
-    app.post('/CSOP/scenario1_7_Alterations_CSOP', function (req, res) {
+    app.post('/CSOP/scheme-alterations-variations', function (req, res) {
         postToSession(req, res);
         var data = req.body;
         var url;
         if (data['radio-group'] === 'Yes') {
-            url = '/CSOP/scenario3_9_Alterations_Check_CSOP';
+            url = '/CSOP/scheme-alterations';
         } else if (data['radio-group'] === 'No') {
-            url = '/CSOP/scenario3_10_Summary_CSOP';
+            url = '/CSOP/summary-check';
         } else {
             url = '';
         }
         res.redirect(url);
     });
+
+
+    // Errors CSOP
+    app.post('/CSOP/errors/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/CSOP/errors/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/CSOP/errors/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/CSOP/errors/upload-file';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/CSOP/errors/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+
+
 
 
 
