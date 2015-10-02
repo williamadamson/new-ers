@@ -1,0 +1,55 @@
+{{<layout}}
+
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
+
+{{$content}}
+
+        <main id="content" role="main">
+            {{>includes/alpha_banner}}
+            {{>SIP/includes/reference}}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+					<h1 class="heading-xlarge">Trustees of this Share Incentive Plan</h1>
+
+					{{! <a href="scenario3_6_Trustee_Details_SIP">Add a trustee</a> }}
+
+					<table>
+						<thead>
+							<tr>
+								<th width="7%"></th>
+								<th width="35%">Name</th>
+								<th >Address</th>
+								<th width="20%"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Mark E Smith</td>
+								<td>Gloucester House<br>Springfield Road<br>Newcastle upon Tyne<br>Tyne and Wear<br>NE1 1AA</td>
+								<td><a class="editCompanyDetails" href="/SIP/trustee-details">Change this</a>
+								<br><a class="deleteCompanyDetails" ref="1" href="#">Delete</a></td>
+							</tr>
+						</tbody>
+					</table>
+
+
+
+					<p><a href="/SIP/trustee-details">Add a trustee</a></p>
+
+					<div class="form-group">
+						<a class="button" href="/SIP/plan-alterations">Continue</a>
+					</div>
+         			<a href="javascript:history.go(-1)">Back</a>
+
+                </div>
+            </div>
+
+        </main>
+
+{{/content}}
+{{/layout}}

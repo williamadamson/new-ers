@@ -1,0 +1,55 @@
+{{<layout}}
+
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
+
+{{$content}}
+
+        <main id="content" role="main">
+            {{>includes/alpha_banner}}
+            {{>SIP/includes/reference}}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+                    <h1 class="heading-xlarge">Add trustee details</h1>
+                    {{>SIP/includes/trustee-details}}
+
+                        <div class="form-group">
+                            <a class="button" href="/SIP/trustees">Continue</a>
+                        </div>
+
+					</form>
+
+                    <a href="javascript:history.go(-1)">Back</a>
+
+                </div>
+            </div>
+
+        </main>
+
+{{/content}}
+{{/layout}}
+
+<script>
+$("#countryname").hide();
+$("#radio-inline-1").on('click', function() {
+  $("#country-name").hide();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-2").on('click', function() {
+  $("#countryname").show();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-1").on('click', function() {
+  $("#countryname").hide();
+  $("#zip").show();
+});
+</script>

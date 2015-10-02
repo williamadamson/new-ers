@@ -126,8 +126,78 @@ module.exports = {
     });
 
 
+    // ERS SIP
+    app.post('/SIP/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/SIP/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '/SIP/scenario1_11_company_SIP';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/SIP/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/SIP/upload-file';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/SIP/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/SIP/group-plans', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['nominee-agent'] === 'Yes') {
+            url = '/SIP/group-plan-details';
+        } else if (data['nominee-agent'] === 'No') {
+            url = '/SIP/trustee-details';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
 
 
+    app.post('/SIP/plan-alterations', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/SIP/alterations-check';
+        } else if (data['radio-group'] === 'No') {
+            url = '/SIP/summary';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+
+    app.post('/SIP/group-plan-details', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/SIP/upload-group-plan';
+        } else if (data['radio-group'] === 'manual') {
+            url = '/SIP/group-plan-company-details';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
 
 
 
