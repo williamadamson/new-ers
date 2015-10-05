@@ -1,0 +1,30 @@
+{
+  "name": "govuk-prototype-kit",
+  "version": "0.0.0",
+  "description": "A project boilerplate for govuk prototypes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Wolfendale",
+  "license": "ISC",
+  "dependencies": {
+    "consolidate": "^0.13.1",
+    "express": "^4.13.3",
+    "fs-extra": "^0.24.0",
+    "govuk_frontend_toolkit": "^4.3.0",
+    "govuk_template_mustache": "^0.16.0",
+    "gulp": "^3.9.0",
+    "gulp-live-server": "0.0.28",
+    "gulp-rename": "^1.2.2",
+    "hogan.js": "^3.0.2"
+  },
+  "devDependencies": {
+    "glob-all": "^3.0.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.6",
+    "rimraf": "^2.4.3"
+  }
+}
