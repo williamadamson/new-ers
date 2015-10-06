@@ -1,23 +1,39 @@
 var express = require('express'),
+  q = require('q'),
   path = require('path'),
   glob = require('glob-all'),
-  engines = require('consolidate'),
+  hjs = require('hjs'),
 
   app = express();
 
-app.engine('html', engines.hogan);
-app.set('view engine', 'html');
-app.set('views', glob.sync([
-  __dirname + '/app/**/views',
-  __dirname + '/node_modules/govuk_*/**/views'
-  ]));
+var viewdirs = [
+  __dirname + '/views',
+  __dirname + '/app/**/views'
+];
+
+var viewext = 'html';
+
+app.locals.partials = 
+  glob.sync(viewdirs.map(function (e) {
+    return e + '/**/*.' + viewext;
+  })).reduce(function (m, file) {
+      relpath = file.replace(/^.*views\/(.*?)\.html/, '$1');
+      m[relpath] = relpath;
+      return m;
+  }, {});
+
+console.log(app.locals.partials);
+
+app.engine('html', require('hjs').__express);
+app.set('view engine', viewext);
+app.set('views', glob.sync(viewdirs));
 
 app.use('/', express.static(
   path.join(__dirname, 'public')
 ));
 
 app.get('/', function (req, res) {
-  res.render('layouts/govuk_template', {name: 'world'});
+  res.render('index');
 });
 
 app.listen(process.env.port || 3000);
