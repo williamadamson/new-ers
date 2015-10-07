@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+  q = require('q'),
   gls = require('gulp-live-server'),
   rimraf = require('gulp-rimraf'),
   rename = require('gulp-rename'),
@@ -59,36 +60,32 @@ gulp.task('template', function () {
     .pipe(gulp.dest(path.join(__dirname, 'views')));
 });
 
-// This needs tidying up, preferrably with Q
-// TODO: Fix this so it returns an async thing and
-// doesn't break dependant tasks
+// This could do with a tidy
 gulp.task('sass', function () {
-
   var appDir = 'app';
-
-  fs.readdir(appDir, function (err, files) {
-    if (err) throw err;
-    files.forEach(function (file) {
-      fs.stat(path.join(__dirname, appDir, file), function (err, stats) {
-        if (err) throw err;
-        if (stats.isDirectory()) {
-          gulp.src(path.join(__dirname, appDir, file, 'src/sass/**/*.scss'))
-            .pipe(sass({
-              outputStyle : 'extended',
-              includePaths : glob.sync([
-                  __dirname + '/node_modules/govuk_*/stylesheets',
-                  __dirname + '/govuk_elements/**/sass'
-                ])
-            }))
-            .pipe(gulp.dest(
-              path.join(__dirname, appDir, file, 'public/assets/stylesheets')))
-        }
-      });
-    });
+  return q.nfcall(fs.readdir, appDir).then(function (files) {
+    q.all(
+      files.map(function (file) {
+        return q.nfcall(fs.stat, path.join(__dirname, appDir, file)).then(function (stats) {
+          if (stats.isDirectory()) {
+            gulp.src(path.join(__dirname, appDir, file, 'src/sass/**/*.scss'))
+              .pipe(sass({
+                outputStyle : 'extended',
+                includePaths : glob.sync([
+                    __dirname + '/node_modules/govuk_*/stylesheets',
+                    __dirname + '/govuk_elements/**/sass'
+                  ])
+              }))
+              .pipe(gulp.dest(
+                path.join(__dirname, appDir, file, 'public/assets/stylesheets')));
+          }
+        });
+      })
+    );
   });
 });
 
-gulp.task('build', ['sass', 'move']);
+gulp.task('build', ['sass', 'move', 'template']);
 
 // TODO: add 'build' as dependent task when it works
 gulp.task('start', function () {
