@@ -15,7 +15,8 @@ var gulp = require('gulp'),
 gulp.task('clean', function() {
   return gulp.src(
     glob.sync([
-      __dirname + '/**/public',
+      __dirname + '/app/**/public',
+      __dirname + '/public',
       __dirname + '/views'
     ]), { read : false})
     .pipe(rimraf({ force : true }))
@@ -74,7 +75,10 @@ gulp.task('sass', function () {
           gulp.src(path.join(__dirname, appDir, file, 'src/sass/**/*.scss'))
             .pipe(sass({
               outputStyle : 'extended',
-              includePaths : glob.sync(path.join(__dirname, 'node_modules/govuk_*/stylesheets'))
+              includePaths : glob.sync([
+                  __dirname + '/node_modules/govuk_*/stylesheets',
+                  __dirname + '/govuk_elements/**/sass'
+                ])
             }))
             .pipe(gulp.dest(
               path.join(__dirname, appDir, file, 'public/assets/stylesheets')))
@@ -95,6 +99,7 @@ gulp.task('start', function () {
   gulp.watch(glob.sync('app/**/*.scss'), ['sass']);
 
   // restarts the server when the start file changes
+  // TODO: make it not crash - yay!
   // TODO: add routes files to this
   gulp.watch('start.js', server.start.bind(server));
 });
