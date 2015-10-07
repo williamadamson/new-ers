@@ -77,7 +77,7 @@ gulp.task('sass', function () {
                   ])
               }))
               .pipe(gulp.dest(
-                path.join(__dirname, appDir, file, 'public/assets/stylesheets')));
+                path.join(__dirname, appDir, file, 'assets/public/stylesheets')));
           }
         });
       })
@@ -88,7 +88,7 @@ gulp.task('sass', function () {
 gulp.task('build', ['sass', 'move', 'template']);
 
 // TODO: add 'build' as dependent task when it works
-gulp.task('start', function () {
+gulp.task('start', ['build'], function () {
   var server = gls.new('start.js', 3000);
   server.start();
 

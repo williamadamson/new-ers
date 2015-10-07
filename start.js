@@ -33,8 +33,6 @@ app.locals.partials =
 // nested projects
 app.locals.assetPath = '/';
 
-// console.log(app.locals.partials);
-
 app.engine('html', hjs.__express);
 app.set('view engine', viewext);
 app.set('views', glob.sync(viewdirs));
@@ -44,7 +42,7 @@ app.set('views', glob.sync(viewdirs));
 // global assets and sprint assets, we need to
 // loop over the glob of dirs
 glob.sync([
-  __dirname + 'govuk_elements/public',
+  __dirname + '/govuk_elements/public',
   __dirname + '/public',
   __dirname + '/app/**/assets'
 ]).map(function (e) {
