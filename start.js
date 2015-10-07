@@ -6,52 +6,51 @@ var express = require('express'),
 
   app = express();
 
-var viewdirs = [
-  __dirname + '/views',
-  __dirname + '/govuk_elements/views',
-  __dirname + '/app/**/views'
-];
-
-var viewext = 'html';
-
-// This adds every template in the project
-// as a partial that can be referenced by
-// any other template.
+function crunchTemplates(viewdirs) {
+  return glob.sync(viewdirs.map(function (e) {
+    return e + '/**/*.html';
+  })).reduce(function (m, file) {
+    var relpath = file.replace(/^.*views\/(.*?)\.html/, '$1');
+    m[relpath] = relpath;
+    return m;
+  }, {});
+}
 
 // TODO: https://github.com/wolfendale/prototype_kit/issues/2
-app.locals.partials = 
-  glob.sync(viewdirs.map(function (e) {
-    return e + '/**/*.' + viewext;
-  })).reduce(function (m, file) {
-      var relpath = file.replace(/^.*views\/(.*?)\.html/, '$1');
-      m[relpath] = relpath;
-      return m;
-  }, {});
+app.locals.partials = crunchTemplates([
+  __dirname + '/views',
+  __dirname + '/govuk_elements/views'
+]);
 
-// This sets the assets path to
-// resolve globally, this fixes issues with
-// nested projects
 app.locals.assetPath = '/';
 
 app.engine('html', hjs.__express);
-app.set('view engine', viewext);
-app.set('views', glob.sync(viewdirs));
+app.set('view engine', 'html');
+app.set('views', glob.sync([
+  __dirname + '/views',
+  __dirname + '/govuk_elements/views'
+]));
 
-// As the express.static middleware does not
+// as the express.static middleware does not
 // take an array of args, in order to serve the
 // global assets and sprint assets, we need to
 // loop over the glob of dirs
+
+// TODO: if we manage to include govuk_elements
+// as a dependency, this can be reduced to just
+// share the 'public' dir and a gulp task to
+// move the right files around
 glob.sync([
   __dirname + '/govuk_elements/public',
   __dirname + '/public',
-  __dirname + '/app/**/assets'
 ]).map(function (e) {
   app.use('/', express.static(e));
 });
 
-// include the routes file from each sub project
-// as a router with a prefix of the folder name
-glob.sync(__dirname + '/app/**/router.js')
+// include the app file from each sub project
+// as sub app mounted at the prefix of the name
+// of the folder
+glob.sync(__dirname + '/app/**/app.js')
   .map(function (e) {
     var p = './' + path.relative(
       __dirname, e
@@ -60,8 +59,9 @@ glob.sync(__dirname + '/app/**/router.js')
     app.use(name, require(p));
   });
 
+// global routes
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('foo');
 });
 
 app.listen(process.env.port || 3000);

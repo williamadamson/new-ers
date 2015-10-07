@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+  merge = require('merge-stream'),
   q = require('q'),
   gls = require('gulp-live-server'),
   rimraf = require('gulp-rimraf'),
@@ -24,11 +25,15 @@ gulp.task('clean', function() {
 });
 
 gulp.task('move', function () {
-  return gulp.src('node_modules/govuk_*/**/*.@(js|css|png|gif|jpg|jpeg)')
+  var srcs = gulp.src('node_modules/govuk_*/**/*.@(js|css|png|gif|jpg|jpeg)')
     .pipe(rename(function (path) {
-      path.dirname = path.dirname.replace(/^.*?[\\\/](assets)?/, '');
+      path.dirname = path.dirname.replace(/^.*?[\\\/](?:assets)?/, '');
     }))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('public'));
+  var rtn = glob.sync(__dirname + '/app/*').reduce(function (m, app) {
+    return m.add(srcs.pipe(gulp.dest(path.join(app, 'public'))));
+  }, merge());
+  return rtn.isEmpty() ? null : rtn;
 });
 
 // This is stupid
@@ -77,7 +82,7 @@ gulp.task('sass', function () {
                   ])
               }))
               .pipe(gulp.dest(
-                path.join(__dirname, appDir, file, 'assets/public/stylesheets')));
+                path.join(__dirname, appDir, file, 'public/stylesheets')));
           }
         });
       })
