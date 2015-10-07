@@ -1,0 +1,38 @@
+{{<layout}}
+
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
+
+{{$content}}
+
+        <main id="content" role="main">
+           {{>includes/alpha_banner}}
+
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+					<h1 class="heading-xlarge">Error report</h1>
+					<div class="panel-indent">
+						<p>There are formatting errors in at least one of your files.</p>
+					</div>
+
+					<div style="clear:both; border-bottom: 1px solid #bfc1c3">
+
+						<a class="button medium" id="btnValidation" type="button" href="/public/pdf/errors_report_CSOP.pdf" target="_blank" title="Opens new window">View error report (PDF, 500KB)</a>
+						<p>You can also <a href="/CSOP/errors/web-errors">view this error report as a web page</a>.</p>
+					</div>
+
+
+					<h2 class="heading-medium">What happens next?</h2>
+					<p>Correct the errors and <a href="/CSOP/errors/choose-file-type">upload your file(s) again or choose a different file</a>.</p>
+
+   					<a href="javascript:history.go(-1)" class="link-back">Back</a>
+                </div>
+            </div>
+
+        </main>
+
+{{/content}}
+{{/layout}}

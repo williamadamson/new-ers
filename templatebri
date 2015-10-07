@@ -8,7 +8,7 @@
 
         <main id="content" role="main">
             {{>includes/alpha_banner}}
-            {{>SIP/includes/reference}}
+            {{>EMI/includes/reference}}
 
             <div class="grid-row">
                 <div class="column-two-thirds">

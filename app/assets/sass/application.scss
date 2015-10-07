@@ -40,11 +40,7 @@
 
 
 .form-label-bold {
-  @include bold-19;
   margin-bottom: 10px;
-  .form-hint {
-    @include core-19;
-  }
 }
 .list-bullet{
   margin-bottom: 0;

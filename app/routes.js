@@ -134,7 +134,7 @@ module.exports = {
         if (data['radio-group'] === 'Yes') {
             url = '/SIP/choose-file-type';
         } else if (data['radio-group'] === 'No') {
-            url = '/SIP/scenario1_11_company_SIP';
+            url = '/SIP/company-details';
         } else {
             url = '';
         }
@@ -199,7 +199,121 @@ module.exports = {
         res.redirect(url);
     });
 
+    // Errors SIP
+    app.post('/SIP/errors/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/SIP/errors/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
 
+    app.post('/SIP/errors/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/SIP/errors/upload-file';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/SIP/errors/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+
+    // ERS EMI
+    app.post('/EMI/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/EMI/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '/EMI/company-details';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/EMI/qualifying-subsidiaries', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/EMI/qualifying-company-details';
+        } else if (data['radio-group'] === 'No') {
+            url = '/EMI/summary';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/EMI/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/EMI/upload-file';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/EMI/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/EMI/qualifying-company-details', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/EMI/upload-subsidiary';
+        } else if (data['radio-group'] === 'manual') {
+            url = '/EMI/add-subsidiary-details';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    // EMI errors
+    app.post('/EMI/errors/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/EMI/errors/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '#';
+        } else {
+            url = '#';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/EMI/errors/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/EMI/errors/upload-file';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/EMI/errors/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
 
     // Functions
     // Push posted form data into session

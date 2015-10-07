@@ -22,7 +22,7 @@
 						</p>
 					</form>
 
- 					<a href="javascript:history.go(-1)">Back</a>
+ 					<a href="javascript:history.go(-1)" class="link-back">Back</a>
 
                 </div>
             </div>
@@ -31,3 +31,30 @@
 
 {{/content}}
 {{/layout}}
+<script>
+$("#countryname").hide();
+$("#radio-inline-1").on('click', function() {
+  $("#country-name").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-2").on('click', function() {
+  $("#countryname").show();
+  $("#crn").hide();
+  $("#ctr").hide();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-1").on('click', function() {
+  $("#countryname").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").show();
+});
+</script>
