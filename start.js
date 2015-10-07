@@ -28,6 +28,11 @@ app.locals.partials =
       return m;
   }, {});
 
+// This sets the assets path to
+// resolve globally, this fixes issues with
+// nested projects
+app.locals.assetPath = '/';
+
 // console.log(app.locals.partials);
 
 app.engine('html', hjs.__express);
@@ -45,6 +50,17 @@ glob.sync([
 ]).map(function (e) {
   app.use('/', express.static(e));
 });
+
+// include the routes file from each sub project
+// as a router with a prefix of the folder name
+glob.sync(__dirname + '/app/**/router.js')
+  .map(function (e) {
+    var p = './' + path.relative(
+      __dirname, e
+    ).replace(/\\/g, '/');
+    var name = e.replace(/^.*app(\/.*?)\/.*$/, '$1');
+    app.use(name, require(p));
+  });
 
 app.get('/', function (req, res) {
   res.render('index');
