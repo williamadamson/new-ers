@@ -63,7 +63,11 @@ glob.sync(__dirname + '/app/**/app.js')
       __dirname, e
     ).replace(/\\/g, '/');
     var name = e.replace(/^.*app(\/.*?)\/.*$/, '$1');
-    app.use(name, require(p));
+    var sub = require(p);
+    sub.use(function (req, res, next) {
+      res.render(req.path.substring(1));
+    });
+    app.use(name, sub);
   });
 
 // global routes
