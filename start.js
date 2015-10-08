@@ -61,7 +61,7 @@ glob.sync(__dirname + '/app/**/app.js')
 
 // global routes
 app.get('/', function (req, res) {
-  res.render('foo');
+  res.render('index');
 });
 
 app.listen(process.env.port || 3000);
