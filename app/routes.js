@@ -315,6 +315,77 @@ module.exports = {
         res.redirect(url);
     });
 
+    // ERS SAYE
+    app.post('/SAYE/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/SAYE/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '/SAYE/add-scheme-organiser';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/SAYE/group-schemes', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/SAYE/group-scheme-details';
+        } else if (data['radio-group'] === 'No') {
+            url = '/SAYE/alterations';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/SAYE/alterations', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/SAYE/scenario3_9_Alterations_Check_SAYE';
+        } else if (data['radio-group'] === 'No') {
+            url = '/SAYE/summary';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/SAYE/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/SAYE/upload-files';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/SAYE/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/SAYE/group-scheme-details', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/SAYE/upload-group-scheme-details';
+        } else if (data['radio-group'] === 'manual') {
+            url = '/SAYE/add-company-details';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
     // Functions
     // Push posted form data into session
     function postToSession(req, res) {
