@@ -6,15 +6,15 @@ var express = require('express'),
   hjs = require('hjs'),
 
   app = express();
-  
+
 app.use(favicon(
-  path.join(__dirname, 'public', 'images', 'favicon.ico')));
+  path.join(__dirname, 'global', 'public', 'images', 'favicon.ico')));
 
 function crunchTemplates(viewdirs) {
   return glob.sync(viewdirs.map(function (e) {
     return e + '/**/*.html';
   })).reduce(function (m, file) {
-    var relpath = file.replace(/^.*views\/(.*?)\.html/, '$1');
+    var relpath = file.replace(/^.*(?:views|template)\/(.*?)\.html/, '$1');
     m[relpath] = relpath;
     return m;
   }, {});
@@ -22,19 +22,21 @@ function crunchTemplates(viewdirs) {
 
 // TODO: https://github.com/wolfendale/prototype_kit/issues/2
 app.locals.partials = crunchTemplates([
-  __dirname + '/views',
+  __dirname + '/global/views',
+  __dirname + '/global/template',
   __dirname + '/govuk_elements/views'
 ]);
 
 app.locals.assetPath = '/';
+app.locals.localAssets = '/';
 
 app.engine('html', hjs.__express);
 app.set('view engine', 'html');
 app.set('views', glob.sync([
-  __dirname + '/views',
+  __dirname + '/global/views',
+  __dirname + '/global/template',
   __dirname + '/govuk_elements/views'
 ]));
-
 
 // as the express.static middleware does not
 // take an array of args, in order to serve the
@@ -46,8 +48,8 @@ app.set('views', glob.sync([
 // share the 'public' dir and a gulp task to
 // move the right files around
 glob.sync([
-  __dirname + '/govuk_elements/public',
-  __dirname + '/public',
+  __dirname + '/govuk_elements',
+  __dirname + '/global/public',
 ]).map(function (e) {
   app.use('/', express.static(e));
 });

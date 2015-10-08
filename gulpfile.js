@@ -15,25 +15,20 @@ var gulp = require('gulp'),
   sass = require('gulp-sass');
 
 gulp.task('clean', function() {
-  return gulp.src(
-    glob.sync([
+  return gulp.src([
       __dirname + '/app/**/public',
-      __dirname + '/public',
-      __dirname + '/views'
-    ]), { read : false})
+      __dirname + '/global/public',
+      __dirname + '/global/template'
+    ], { read : false})
     .pipe(rimraf({ force : true }))
 });
 
 gulp.task('move', function () {
-  var srcs = gulp.src('node_modules/govuk_*/**/*.@(js|css|png|gif|jpg|jpeg|ico)')
+  return gulp.src('node_modules/govuk_*/**/*.@(js|css|png|gif|jpg|jpeg|ico)')
     .pipe(rename(function (path) {
       path.dirname = path.dirname.replace(/^.*?[\\\/](?:assets)?/, '');
     }))
-    .pipe(gulp.dest('public'));
-  var rtn = glob.sync(__dirname + '/app/*').reduce(function (m, app) {
-    return m.add(srcs.pipe(gulp.dest(path.join(app, 'public'))));
-  }, merge());
-  return rtn.isEmpty() ? null : rtn;
+    .pipe(gulp.dest('global/public'));
 });
 
 // This is stupid
@@ -62,48 +57,43 @@ gulp.task('template', function () {
       skipLinkMessage: "{{$skipLinkMessage}}Skip to main content{{/skipLinkMessage}}"
     }))
     .pipe(rename('govuk_template.html'))
-    .pipe(gulp.dest(path.join(__dirname, 'views')));
+    .pipe(gulp.dest(__dirname + '/global/template'));
 });
 
-// This could do with a tidy
 gulp.task('sass', function () {
-  var appDir = 'app';
-  return q.nfcall(fs.readdir, appDir).then(function (files) {
-    q.all(
-      files.map(function (file) {
-        return q.nfcall(fs.stat, path.join(__dirname, appDir, file)).then(function (stats) {
-          if (stats.isDirectory()) {
-            gulp.src(path.join(__dirname, appDir, file, 'src/sass/**/*.scss'))
-              .pipe(sass({
-                outputStyle : 'extended',
-                includePaths : glob.sync([
-                    __dirname + '/node_modules/govuk_*/stylesheets',
-                    __dirname + '/govuk_elements/**/sass'
-                  ])
-              }))
-              .pipe(gulp.dest(
-                path.join(__dirname, appDir, file, 'public/stylesheets')));
-          }
-        });
-      })
-    );
-  });
+  var rtn = glob.sync(__dirname + '/app/*').reduce(function (m, app) {
+    return m.add(gulp.src(app + '/src/sass/**/*.scss')
+      .pipe(sass({
+        outputStyle : 'extended',
+        includePaths : glob.sync([
+          __dirname + '/node_modules/govuk_*/stylesheets',
+          __dirname + '/govuk_elements/**/sass'
+        ])
+      }))
+      .pipe(gulp.dest(app + '/public/stylesheets')));
+  }, merge());
+  return rtn ? rtn : null;
 });
 
 gulp.task('build', ['sass', 'move', 'template']);
 
-// TODO: add 'build' as dependent task when it works
 gulp.task('start', ['build'], function () {
   var server = gls.new('start.js', 3000);
   server.start();
 
   // recompiles sass files on the fly
-  gulp.watch(glob.sync('app/**/*.scss'), ['sass']);
+  gulp.watch('app/**/*.scss', ['sass']);
 
   // restarts the server when the start file changes
-  // TODO: make it not crash - yay!
-  // TODO: add routes files to this
-  gulp.watch('start.js', server.start.bind(server));
+  gulp.watch([
+      'start.js',
+      'lib/*.js',
+      'app/**/app.js'
+    ], function () {
+    gutil.log('Restarting server...');
+    server.start.apply(server);
+    gutil.log('Server restarted!');
+  });
 });
 
 gulp.task('default', ['start']);
