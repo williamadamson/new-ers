@@ -1,10 +1,14 @@
 var express = require('express'),
+  favicon = require('serve-favicon'),
   q = require('q'),
   path = require('path'),
   glob = require('glob-all'),
   hjs = require('hjs'),
 
   app = express();
+  
+app.use(favicon(
+  path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 function crunchTemplates(viewdirs) {
   return glob.sync(viewdirs.map(function (e) {
@@ -30,6 +34,7 @@ app.set('views', glob.sync([
   __dirname + '/views',
   __dirname + '/govuk_elements/views'
 ]));
+
 
 // as the express.static middleware does not
 // take an array of args, in order to serve the

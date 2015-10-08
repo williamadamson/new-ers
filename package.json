@@ -21,7 +21,8 @@
     "gulp-rename": "^1.2.2",
     "hjs": "0.0.6",
     "hogan.js": "^3.0.2",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "glob-all": "^3.0.1",

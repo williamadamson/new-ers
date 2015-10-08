@@ -25,7 +25,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('move', function () {
-  var srcs = gulp.src('node_modules/govuk_*/**/*.@(js|css|png|gif|jpg|jpeg)')
+  var srcs = gulp.src('node_modules/govuk_*/**/*.@(js|css|png|gif|jpg|jpeg|ico)')
     .pipe(rename(function (path) {
       path.dirname = path.dirname.replace(/^.*?[\\\/](?:assets)?/, '');
     }))
