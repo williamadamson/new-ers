@@ -1,6 +1,6 @@
 # Prototype Kit
 
-You must have NodeJS installed to use this.
+You must have [NodeJS](https://nodejs.org/en/download/) installed to use this.
 
 ```bash
 git clone https://github.com/wolfendale/prototype_kit.git
