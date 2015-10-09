@@ -24,7 +24,6 @@ function crunchTemplates(viewdirs) {
 app.locals.partials = crunchTemplates([
   __dirname + '/global/views',
   __dirname + '/global/template',
-  __dirname + '/govuk_elements/views'
 ]);
 
 app.locals.assetPath = '/';
@@ -33,9 +32,9 @@ app.locals.localAssets = '/';
 app.engine('html', hjs.__express);
 app.set('view engine', 'html');
 app.set('views', glob.sync([
+  __dirname,
   __dirname + '/global/views',
   __dirname + '/global/template',
-  __dirname + '/govuk_elements/views'
 ]));
 
 // as the express.static middleware does not
@@ -65,14 +64,16 @@ glob.sync(__dirname + '/app/**/app.js')
     var name = e.replace(/^.*app(\/.*?)\/.*$/, '$1');
     var sub = require(p);
     sub.use(function (req, res, next) {
-      res.render(req.path.substring(1));
+      try {
+        res.render(req.path.substring(1));
+      } catch (e) {
+        next();
+      }
     });
     app.use(name, sub);
   });
 
-// global routes
-app.get('/', function (req, res) {
-  res.render('index');
-});
+// global controllers
+require('./lib/controllers/index.js')(app);
 
 app.listen(process.env.port || 3000);

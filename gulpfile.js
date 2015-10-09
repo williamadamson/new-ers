@@ -14,6 +14,7 @@ var gulp = require('gulp'),
   hogan = require('gulp-hogan'),
   sass = require('gulp-sass');
 
+
 gulp.task('clean', function() {
   return gulp.src([
       __dirname + '/app/**/public',
@@ -61,7 +62,10 @@ gulp.task('template', function () {
 });
 
 gulp.task('sass', function () {
-  var rtn = glob.sync(__dirname + '/app/*').reduce(function (m, app) {
+  var rtn = glob.sync([
+    __dirname + '/app/*',
+    __dirname + '/global'
+  ]).reduce(function (m, app) {
     return m.add(gulp.src(app + '/src/sass/**/*.scss')
       .pipe(sass({
         outputStyle : 'extended',
@@ -86,10 +90,10 @@ gulp.task('start', ['build'], function () {
 
   // restarts the server when the start file changes
   gulp.watch([
-      'start.js',
-      'lib/*.js',
-      'app/**/app.js'
-    ], function () {
+    'start.js',
+    'lib/**/*.js',
+    'app/**/app.js'
+  ], function () {
     gutil.log('Restarting server...');
     server.start.apply(server);
     gutil.log('Server restarted!');
