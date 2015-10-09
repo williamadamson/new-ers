@@ -1,5 +1,6 @@
 var express = require('express'),
   favicon = require('serve-favicon'),
+  bodyParser = require('body-parser'),
   q = require('q'),
   path = require('path'),
   glob = require('glob-all'),
@@ -9,6 +10,8 @@ var express = require('express'),
 
 app.use(favicon(
   path.join(__dirname, 'global', 'public', 'images', 'favicon.ico')));
+
+app.use(bodyParser.urlencoded({ extended : true }));
 
 function crunchTemplates(viewdirs) {
   return glob.sync(viewdirs.map(function (e) {
@@ -72,6 +75,9 @@ glob.sync(__dirname + '/app/**/app.js')
     });
     app.use(name, sub);
   });
+
+// mount admin app
+app.use('/admin', require('./global/admin/app.js'));
 
 // global controllers
 require('./lib/controllers/index.js')(app);

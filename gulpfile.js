@@ -19,6 +19,7 @@ gulp.task('clean', function() {
   return gulp.src([
       __dirname + '/app/**/public',
       __dirname + '/global/public',
+      __dirname + '/global/admin',
       __dirname + '/global/template'
     ], { read : false})
     .pipe(rimraf({ force : true }))
@@ -64,7 +65,8 @@ gulp.task('template', function () {
 gulp.task('sass', function () {
   var rtn = glob.sync([
     __dirname + '/app/*',
-    __dirname + '/global'
+    __dirname + '/global',
+    __dirname + '/global/admin'
   ]).reduce(function (m, app) {
     return m.add(gulp.src(app + '/src/sass/**/*.scss')
       .pipe(sass({
@@ -92,7 +94,7 @@ gulp.task('start', ['build'], function () {
   gulp.watch([
     'start.js',
     'lib/**/*.js',
-    'app/**/app.js'
+    '**/app.js'
   ], function () {
     gutil.log('Restarting server...');
     server.start.apply(server);
