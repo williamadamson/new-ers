@@ -9,7 +9,7 @@ module.exports = function (app) {
 
   app.get('/new-iteration', function (req, res) {
     res.render('new-iteration', {
-      apps : require('../../lib/models/apps-model.js')
+      apps : apps
     });
   });
 
