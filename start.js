@@ -99,4 +99,4 @@ app.use('/admin', require('./global/admin/app.js'));
 // global controllers
 require('./lib/controllers/index.js')(app);
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.PORT || 3000);
