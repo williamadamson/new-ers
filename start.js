@@ -66,10 +66,27 @@ glob.sync(__dirname + '/app/**/app.js')
     ).replace(/\\/g, '/');
     var name = e.replace(/^.*app(\/.*?)\/.*$/, '$1');
     var sub = require(p);
-    sub.use(function (req, res, next) {
+    // if a get request falls through to this
+    // point we check to see if we have a view
+    // that matches the url and render that.
+    // useful if people do not want to declare
+    // routes
+    sub.get('*', function (req, res, next) {
       try {
         res.render(req.path.substring(1));
       } catch (e) {
+        next();
+      }
+    });
+    // this adds a default post to every page
+    // that checks whether the request body
+    // contains a 'next-page' key, if so
+    // we redirect the user to whatever the
+    // value of that key is
+    sub.post('*', function (req, res, next) {
+      if (req.body['next-page']) {
+        res.redirect(name + '/' + req.body['next-page']);
+      } else {
         next();
       }
     });
@@ -77,7 +94,6 @@ glob.sync(__dirname + '/app/**/app.js')
   });
 
 // mount admin app
-
 app.use('/admin', require('./global/admin/app.js'));
 
 // global controllers
