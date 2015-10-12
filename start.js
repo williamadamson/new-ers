@@ -31,6 +31,7 @@ app.locals.partials = crunchTemplates([
 
 app.locals.assetPath = '/';
 app.locals.localAssets = '/';
+app.locals.isDev = app.get('env') === 'development';
 
 app.engine('html', hjs.__express);
 app.set('view engine', 'html');
@@ -94,7 +95,9 @@ glob.sync(__dirname + '/app/**/app.js')
   });
 
 // mount admin app
-app.use('/admin', require('./global/admin/app.js'));
+if (app.locals.isDev) {
+  app.use('/admin', require('./global/admin/app.js'));
+}
 
 // global controllers
 require('./lib/controllers/index.js')(app);
