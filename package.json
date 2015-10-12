@@ -25,16 +25,14 @@
     "gulp-sass": "^2.0.4",
     "gulp-util": "^3.0.6",
     "gulp-flatten": "^0.2.0",
+    "gulp-live-server": "0.0.28",
+    "gulp-rimraf": "^0.2.0",
+    "rimraf": "^2.4.3",
     "merge-stream": "^1.0.0",
     "hjs": "0.0.6",
     "hogan.js": "^3.0.2",
     "q": "^1.4.1",
     "serve-favicon": "^2.3.0",
     "touch": "^1.0.0"
-  },
-  "devDependencies": {
-    "gulp-live-server": "0.0.28",
-    "gulp-rimraf": "^0.2.0",
-    "rimraf": "^2.4.3"
   }
 }
