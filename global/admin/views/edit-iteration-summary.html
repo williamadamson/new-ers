@@ -11,8 +11,20 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 
-			<h1 class="heading-xlarge">Admin</h1>
-			
+			<h1 class="heading-xlarge">Edit Iteration</h1>
+
+			<!-- TODO: Make this look nicer? Ask a UX! -->
+
+			{{#apps}}
+				<h3 class="heading-medium">
+					<a href="edit-iteration/{{path}}">
+						{{name}}
+					</a>
+				</h3>
+			{{/apps}}
+
+			<a href="/">Back</a>
+
 		</div>
 		<div class="column-third">
 

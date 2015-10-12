@@ -19,7 +19,7 @@ gulp.task('clean', function() {
   return gulp.src([
       __dirname + '/app/**/public',
       __dirname + '/global/public',
-      __dirname + '/global/admin',
+      __dirname + '/global/admin/public',
       __dirname + '/global/template'
     ], { read : false})
     .pipe(rimraf({ force : true }))

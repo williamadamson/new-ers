@@ -77,6 +77,7 @@ glob.sync(__dirname + '/app/**/app.js')
   });
 
 // mount admin app
+
 app.use('/admin', require('./global/admin/app.js'));
 
 // global controllers

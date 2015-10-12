@@ -11,7 +11,7 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 
-			<h1 class="heading-xlarge">New Iteration</h1>
+			<h1 class="heading-xlarge">Edit Iteration</h1>
 
 			<form method="post">
 
@@ -19,40 +19,21 @@
 					<label class="form-label">
 						<span>Name</span>
 					</label>
-					<input name="name" class="form-control"></input>
-				</div>
-
-				<div class="form-group">
-					<label class="form-label">
-						<span>Url</span>
-					</label>
-					<input name="path" class="form-control"></input>
+					<input name="name" class="form-control" value="{{name}}"></input>
 				</div>
 
 				<div class="form-group">
 					<label class="form-label">
 						<span>Description</span>
 					</label>
-					<textarea name="description" class="form-control"></textarea>
-				</div>
-
-				<div class="form-group">
-					<label class="form-label">
-						<span>Which app should be copied?</span>
-					</label>
-					<select name="app" class="form-control">
-						<option></option>
-						{{#apps}}
-							<option value="{{path}}">{{name}}</option>
-						{{/apps}}
-					</select>
+					<textarea name="description" class="form-control">{{description}}</textarea>
 				</div>
 
 				<button class="button">Create iteration</button>
 
 			</form>
 
-			<a href="/">Back</a>
+			<a href="/admin/edit-iteration">Back</a>
 
 		</div>
 		<div class="column-third">
