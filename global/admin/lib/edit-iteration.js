@@ -1,4 +1,5 @@
 var apps = require('../../../lib/models/apps-model.js'),
+  _ = require('lodash'),
   path = require('path'),
   fs = require('fs-extra'),
   util = require('./util.js');
@@ -16,7 +17,7 @@ module.exports = function (app) {
   // boilerplate function for the controllers
   function editIteration(fn) {
     return function (req, res, next) {
-      var subapp = apps.find(function (e) {
+      var subapp = _.find(apps, function (e) {
         return e.path === req.params.iteration;
       });
       if (subapp) {
