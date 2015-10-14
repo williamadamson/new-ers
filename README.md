@@ -1,11 +1,5 @@
 # Prototype Kit
 
-You must have [NodeJS](https://nodejs.org/en/download/) installed to use this.
+**NOTE: This kit is in development and may not be suited for prototyping yet**
 
-```bash
-git clone https://github.com/wolfendale/prototype_kit.git
-cd prototype_kit
-npm install
-npm install -g gulp
-gulp
-```
+Please see the [Wiki](https://github.com/wolfendale/prototype_kit/wiki/Getting-Started) for help getting started
