@@ -29,6 +29,17 @@
 					<textarea name="description" class="form-control">{{description}}</textarea>
 				</div>
 
+				<div class="form-group">
+					<label class="form-label">
+						<span>What phase is your project in?</span>
+					</label>
+					<select name="phase" class="form-control">
+						<option value="" {{#isLive}}selected="true"{{/isLive}}>Live</option>
+						<option value="beta" {{#isBeta}}selected="true"{{/isBeta}}>Beta</option>
+						<option value="alpha" {{#isAlpha}}selected="true"{{/isAlpha}}>Alpha</option>
+					</select>
+				</div>
+
 				<button class="button">Create iteration</button>
 
 			</form>

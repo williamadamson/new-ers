@@ -16,7 +16,8 @@ module.exports = function (app) {
   app.post('/new-iteration', function (req, res) {
     var meta = {
       name : req.body.name,
-      description : req.body.description
+      description : req.body.description,
+      phase : req.body.phase
     };
     fs.copySync(
       path.join(cwd, 'app', req.body.app),

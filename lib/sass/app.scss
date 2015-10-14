@@ -1,0 +1,17 @@
+@import "main.scss";
+
+.phase-banner-beta {
+	@include phase-banner(beta);
+}
+
+.phase-tag-beta {
+	@include phase-tag(beta);
+}
+
+.phase-banner-alpha {
+	@include phase-banner;
+}
+
+.phase-tag-alpha {
+	@include phase-tag;
+}

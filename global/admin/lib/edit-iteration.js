@@ -30,6 +30,9 @@ module.exports = function (app) {
 
   app.get('/edit-iteration/:iteration', editIteration(function (subapp) {
     return function (req, res) {
+      res.locals.isAlpha = subapp.phase === 'alpha';
+      res.locals.isBeta = subapp.phase === 'beta';
+      res.locals.isLive = !(res.locals.isAlpha || res.locals.isBeta);
       res.render('edit-iteration', subapp);
     };
   }));
@@ -38,7 +41,8 @@ module.exports = function (app) {
     return function (req, res) {
       var meta = {
         name : req.body.name,
-        description : req.body.description
+        description : req.body.description,
+        phase : req.body.phase
       };
       fs.writeJsonSync(
         path.join(cwd, 'app', req.params.iteration, 'meta.json'), meta);
