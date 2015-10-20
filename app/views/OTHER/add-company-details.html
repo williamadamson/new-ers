@@ -1,0 +1,59 @@
+{{<layout}}
+
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
+
+{{$content}}
+
+        <main id="content" role="main">
+            {{>includes/alpha_banner}}
+            {{>OTHER/includes/reference}}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+					<h1 class="heading-xlarge">Add the company details</h1>
+					{{>OTHER/includes/company-details}}
+
+							<div class="form-group">
+                                <a href="/OTHER/other-companies-included-manual" class="button">Continue</a>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                </div>
+            </div>
+
+        </main>
+
+{{/content}}
+{{/layout}}
+<script>
+$("#countryname").hide();
+$("#radio-inline-1").on('click', function() {
+  $("#country-name").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-2").on('click', function() {
+  $("#countryname").show();
+  $("#crn").hide();
+  $("#ctr").hide();
+  $("#zip").hide();
+});
+</script>
+
+<script>
+$("#radio-inline-1").on('click', function() {
+  $("#countryname").hide();
+  $("#crn").show();
+  $("#ctr").show();
+  $("#zip").show();
+});
+</script>

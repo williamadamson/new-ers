@@ -1,0 +1,53 @@
+{{<layout}}
+
+{{$pageTitle}}
+    Submit your ERS annual return
+{{/pageTitle}}
+
+{{$content}}
+
+        <main id="content" role="main">
+            {{>includes/alpha_banner}}
+            {{>OTHER/includes/reference}}
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+					<h1 class="heading-xlarge">Other companies included in this return</h1>
+					<table>
+						<thead>
+							<tr>
+								<th>Company name</th>
+								<th>Address</th>
+								<th>Company Registration<br> Number</th>
+								<th>Corporation Tax<br> Reference</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Abacus Incorporated</td>
+								<td>Gloucester House<br>Springfield Road<br>Newcastle upon Tyne<br>Tyne and Wear<br>NE1 1AA.</td>
+								<td>7589628</td>
+								<td>3458676452</td>
+								<td><a class="editCompanyDetails" href="/OTHER/add-company-details">Change</a><br><a class="deleteCompanyDetails" ref="1" href="#">Delete</a></td>
+							</tr>
+						</tbody>
+					</table>
+
+                    <div class="form-group">
+					   <a href="/OTHER/scenario1_13_company_details_OTHER">Add a company</a>
+                    </div>
+
+					<div class="form-group">
+						<a class="button" href="/OTHER/summary">Continue</a>
+					</div>
+
+                <a href="javascript:history.go(-1)" class="link-back">Back</a>
+                </div>
+            </div>
+
+        </main>
+
+{{/content}}
+{{/layout}}

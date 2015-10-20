@@ -386,6 +386,64 @@ module.exports = {
         res.redirect(url);
     });
 
+    // ERS OTHER
+    app.post('/OTHER/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/OTHER/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '/OTHER/company-details';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/OTHER/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/OTHER/upload-files';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/OTHER/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+
+    app.post('/OTHER/companies-included', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/OTHER/other-company-details';
+        } else if (data['radio-group'] === 'No') {
+            url = '/OTHER/summary';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/OTHER/other-company-details', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/OTHER/upload-company-details';
+        } else if (data['radio-group'] === 'manual') {
+            url = '/OTHER/add-company-details';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
     // Functions
     // Push posted form data into session
     function postToSession(req, res) {
