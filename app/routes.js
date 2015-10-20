@@ -330,6 +330,20 @@ module.exports = {
         res.redirect(url);
     });
 
+    app.post('/SAYE/errors/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/SAYE/errors/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
     app.post('/SAYE/group-schemes', function (req, res) {
         postToSession(req, res);
         var data = req.body;
@@ -366,6 +380,20 @@ module.exports = {
             url = '/SAYE/upload-files';
         } else if (data['radio-group'] === 'ods') {
             url = '/SAYE/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+        app.post('/SAYE/errors/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/SAYE/errors/upload-files';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/SAYE/errors/upload-spreadsheet';
         } else {
             url = '';
         }

@@ -1,0 +1,134 @@
+{{<layout}}
+
+{{$pageTitle}}
+	Submit your ERS annual return
+{{/pageTitle}}
+
+{{$content}}
+
+		<main id="content" role="main">
+			{{>includes/alpha_banner}}
+			{{>SAYE/includes/reference}}
+
+			<div class="grid-row">
+				<div class="column-two-thirds">
+
+
+
+					<h1 class="heading-xlarge">Upload your files</h1>
+					<p>Choose the comma separated values (CSV, .csv) files that you want to upload as part of your Save As You Earn annual return.</p>
+					<div class="text panel-indent">
+						You can only upload CSV (.csv) files.
+					</div>
+					<form method="post">
+						<div id="question1" class="form-group">
+							<p class="form-label-bold">Options granted</p>
+							<div id="browsefilebox" class="question-body">
+								<div class="form1">
+									<input id="selectFile" type="file" name="somename" size="chars">
+									{{! <div id="selectedFileName">&nbsp;</div> }}
+								</div>
+							</div>
+						</div>
+						<div id="question1" class="form-group">
+							<p class="form-label-bold">Options released (including exchanges), cancelled or lapsed in year</p>
+							<div id="browsefilebox" class="question-body">
+								<div class="form1">
+									<input id="selectFile" type="file" name="somename" size="chars">
+									{{! <div id="selectedFileName">&nbsp;</div> }}
+								</div>
+							</div>
+						</div>
+						<div id="question1" class="form-group">
+							<p class="form-label-bold">Options exercised</p>
+							<div id="browsefilebox" class="question-body">
+								<div class="form1">
+									<input id="selectFile" type="file" name="somename" size="chars">
+									{{! <div id="selectedFileName">&nbsp;</div> }}
+								</div>
+							</div>
+						</div>
+						<input id="input-file-name" type="file" name="file[]" style="display:none;" multiple/>
+						<div class="form-group">
+							<a class="button" href="/SAYE/errors/errors-file">Upload files</a>
+						</div>
+					</form>
+
+					<a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+                </div>
+            </div>
+
+        </main>
+
+{{/content}}
+{{/layout}}
+
+
+
+<script>
+
+function GetIEVersion() {
+  var sAgent = window.navigator.userAgent;
+  var Idx = sAgent.indexOf("MSIE");
+  // If IE, return version number.
+  if (Idx > 0)
+	return parseInt(sAgent.substring(Idx+ 5, sAgent.indexOf(".", Idx)));
+	// If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./))
+	return 11;
+  else
+	return 0; //It is not IE
+}
+
+
+
+
+
+$("#choose-file-button").click(function(e) {
+  $("#input-file-name").click();
+});
+
+$("#input-file-name").change(function(e) {
+	$("#fileDiv").show();
+	// Is IE then check version
+	if ((GetIEVersion() > 9) || (GetIEVersion() == 0)) {
+		var numberOfFiles = $("#input-file-name").get(0).files.length;
+		for (i=0; i<numberOfFiles; i++) {
+		$("#fileTable").append("<tr><td>"+$("#input-file-name").get(0).files.item(i).name+"</td><td>Ready to upload</td><td><a href='javascript:void(0);' id='removeFile'>Remove file</a></td></tr>");
+		}
+	} else {
+		// Earlier versions of IE (<9)
+		var fileName = $("#input-file-name").val();
+		$("#fileTable").append("<tr><td>"+fileName+"</td><td>Ready to upload</td><td><a href='javascript:void(0);' id='removeFile'>Remove file</a></td></tr>");
+	}
+});
+
+$("#fileTable").on('click', '#removeFile', function() {
+  $(this).parent().parent().remove();
+  var rowcount = $("#fileTable").prop('rows').length;
+  if (rowcount == 1) {
+	$("#fileDiv").hide();
+  }
+});
+
+function getUrlVars() {
+  var vars = [], hash;
+  var hashes = window.location.href.slice(window.location.href.indexOf('?')+1).split('&');
+  for (var i=0; i<hashes.length; i++) {
+	hash = hashes[i].split('=');
+	vars.push(hash[0]);
+	vars[hash[0]]=hash[1];
+  }
+  return vars;
+}
+
+$(document).ready(function(){
+	//alert(getUrlVars()["radio-group"]);
+   // $("h1").html("Upload your "+ getUrlVars()["radio-group"] +" spreadsheet");
+	$("#fileType").html("You've told us your spreadsheets are "+ getUrlVars()["radio-group"] +" files. If you're uploading multiple spreadsheets they must all be the same file type . ")
+})
+
+
+
+</script>
