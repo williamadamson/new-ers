@@ -444,6 +444,35 @@ module.exports = {
         res.redirect(url);
     });
 
+    app.post('/OTHER/errors/reportable-events', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'Yes') {
+            url = '/OTHER/errors/choose-file-type';
+        } else if (data['radio-group'] === 'No') {
+            url = '#';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+    app.post('/OTHER/errors/choose-file-type', function (req, res) {
+        postToSession(req, res);
+        var data = req.body;
+        var url;
+        if (data['radio-group'] === 'csv') {
+            url = '/OTHER/errors/upload-your-files';
+        } else if (data['radio-group'] === 'ods') {
+            url = '/OTHER/errors/upload-spreadsheet';
+        } else {
+            url = '';
+        }
+        res.redirect(url);
+    });
+
+
     // Functions
     // Push posted form data into session
     function postToSession(req, res) {
