@@ -46,7 +46,7 @@ module.exports = function (app) {
       };
       fs.writeJsonSync(
         path.join(cwd, 'app', req.params.iteration, 'meta.json'), meta);
-      res.redirect('/admin/edit-iteration');
+      res.redirect('../../');
       util.restartApp();
     };
   }));
