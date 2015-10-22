@@ -1,12 +1,28 @@
-{{#apps}}
+<!--{{#apps}}
 	<div>
-		<h3 class="heading-medium">
-			<a href="{{path}}">
-				{{name}}
-			</a>
-		</h3>
-		<p>
-			{{description}}
-		</p>
+		<h3 class="heading-medium"><a href="{{path}}">{{name}}</a></h3>
+		<p>{{description}}</p>
 	</div>
-{{/apps}}
+{{/apps}}-->
+
+
+<table>
+	<thead>
+		<tr>
+			<th width="25%">Iteration</th>
+			{{! <th width="10%">Version</th> }}
+			<th>Description</th>
+			{{#isDev}}<th width="16%"></th>{{/isDev}}
+		</tr>
+	</thead>
+	<tbody>
+		{{#apps}}
+		<tr>
+			<td><a href="{{path}}">{{name}}</a></td>
+			{{! <td>1.01</td> }}
+			<td>{{description}}</td>
+			{{#isDev}}<td><a href="admin/edit-iteration/{{path}}">Edit details</a></td>{{/isDev}}
+		</tr>
+		{{/apps}}
+	</tbody>
+</table>
