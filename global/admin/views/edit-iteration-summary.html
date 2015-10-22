@@ -11,19 +11,36 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 
-			<h1 class="heading-xlarge">Edit Iteration</h1>
+			<h1 class="heading-xlarge">Your current prototypes</h1>
+			<p>You can amend the name, path or description of your iterations.</p>
 
 			<!-- TODO: Make this look nicer? Ask a UX! -->
 
-			{{#apps}}
-				<h3 class="heading-medium">
-					<a href="edit-iteration/{{path}}">
-						{{name}}
-					</a>
-				</h3>
-			{{/apps}}
 
-			<a href="/">Back</a>
+				<table>
+					<thead>
+						<tr>
+							<th width="25%">Iteration</th>
+							{{! <th width="10%">Version</th> }}
+							<th>Description</th>
+							<th width="10%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#apps}}
+						<tr>
+							<td>{{name}}</td>
+							{{! <td>1.01</td> }}
+							<td>{{description}}</td>
+							<td><a href="edit-iteration/{{path}}">Edit</a></td>
+						</tr>
+						{{/apps}}
+					</tbody>
+				</table>
+
+
+
+			<a href="javascript:history.go(-1)" class="link-back">Back</a>
 
 		</div>
 		<div class="column-third">

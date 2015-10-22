@@ -11,59 +11,67 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 
-			<h1 class="heading-xlarge">New Iteration</h1>
+			<h1 class="heading-xlarge">Create a new iteration</h1>
 
 			<form method="post">
+				<fieldset>
+					<div class="form-group">
+						<label class="form-label-bold">
+							Iteration name
+							<span class="form-hint">What you would like to call this iteration</span>
+						</label>
+						<input name="name" class="form-control"></input>
+					</div>
 
-				<div class="form-group">
-					<label class="form-label">
-						<span>Name</span>
-					</label>
-					<input name="name" class="form-control"></input>
-				</div>
+					<div class="form-group">
+						<label class="form-label-bold">
+							Folder name and url
+							<span class="form-hint">This is used as the folder name and the url name so no spaces</span>
+						</label>
+						<input name="path" class="form-control"></input>
+					</div>
 
-				<div class="form-group">
-					<label class="form-label">
-						<span>Url</span>
-					</label>
-					<input name="path" class="form-control"></input>
-				</div>
+					<div class="form-group">
+						<label class="form-label-bold">
+							Description
+							<span class="form-hint">Add a description to help distinguish this iteration</span>
+						</label>
+						<textarea name="description" class="form-control"></textarea>
+					</div>
+				</fieldset>
 
-				<div class="form-group">
-					<label class="form-label">
-						<span>Description</span>
-					</label>
-					<textarea name="description" class="form-control"></textarea>
-				</div>
+				<fieldset>
+					<div class="form-group">
+						<label class="form-label-bold">
+							Which iteration should be copied?
+							<span class="form-hint">Baseline your next iteration off a previous one</span>
+						</label>
+						<select name="app" class="form-control">
+							<option></option>
+							{{#apps}}
+								<option value="{{path}}">{{name}}</option>
+							{{/apps}}
+						</select>
+					</div>
 
-				<div class="form-group">
-					<label class="form-label">
-						<span>Which app should be copied?</span>
-					</label>
-					<select name="app" class="form-control">
-						<option></option>
-						{{#apps}}
-							<option value="{{path}}">{{name}}</option>
-						{{/apps}}
-					</select>
-				</div>
-
-				<div class="form-group">
-					<label class="form-label">
-						<span>What phase is your project in?</span>
-					</label>
-					<select name="phase" class="form-control">
-						<option value="">Live</option>
-						<option value="beta">Beta</option>
-						<option value="alpha">Alpha</option>
-					</select>
-				</div>
+					<div class="form-group">
+						<label class="form-label-bold">
+							What phase is this iteration in?
+							<span class="form-hint">Adds the correct banner to your iteration</span>
+						</label>
+						<select name="phase" class="form-control">
+							<option value="alpha">Alpha</option>
+							<option value="beta">Beta</option>
+							<option value="">Live</option>
+						</select>
+					</div>
+				</fieldset>
 
 				<button class="button">Create iteration</button>
 
 			</form>
 
-			<a href="/">Back</a>
+			<a href="javascript:history.go(-1)" class="link-back">Back</a>
 
 		</div>
 		<div class="column-third">
