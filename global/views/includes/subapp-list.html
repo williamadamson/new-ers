@@ -1,28 +1,30 @@
-<!--{{#apps}}
-	<div>
-		<h3 class="heading-medium"><a href="{{path}}">{{name}}</a></h3>
-		<p>{{description}}</p>
-	</div>
-{{/apps}}-->
-
-
 <table>
 	<thead>
 		<tr>
 			<th width="25%">Iteration</th>
-			{{! <th width="10%">Version</th> }}
 			<th>Description</th>
-			{{#isDev}}<th width="16%"></th>{{/isDev}}
+			{{#isDev}}
+			<th width="8%"></th>
+			{{! <th width="10%"></th> }}
+			{{/isDev}}
 		</tr>
 	</thead>
 	<tbody>
 		{{#apps}}
 		<tr>
 			<td><a href="{{path}}">{{name}}</a></td>
-			{{! <td>1.01</td> }}
+
 			<td>{{description}}</td>
-			{{#isDev}}<td><a href="admin/edit-iteration/{{path}}">Edit details</a></td>{{/isDev}}
+			{{#isDev}}
+			<td><a href="admin/edit-iteration/{{path}}">Edit</a></td>
+			{{! <td><a href="#">Delete</a></td> }}
+			{{/isDev}}
 		</tr>
 		{{/apps}}
 	</tbody>
 </table>
+
+{{#isDev}}
+<p>&nbsp;</p>
+<p class="font-xsmall">You will need to refresh the page to see your changes after editing or creating new iteration.</p>
+{{/isDev}}
