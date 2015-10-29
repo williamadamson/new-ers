@@ -11,52 +11,58 @@
 	<div class="grid-row">
 		<div class="column-two-thirds">
 
-			<h1 class="heading-xlarge">Edit Iteration</h1>
-
+			<h1 class="heading-xlarge">Edit an iteration</h1>
+			<h2 class="heading-large">{{name}}</h2>
 			<form method="post">
-
-				<div class="form-group">
-					<label class="form-label">
-						<span>Name</span>
+				<fieldset>
+					<div class="form-group">
+						<label class="form-label-bold">
+							Iteration name
+							<span class="form-hint">Change the name of this iteration</span>
+						</label>
+						<input name="name" class="form-control" value="{{name}}"></input>
+					</div>
+					<div class="form-group">
+					<label class="form-label-bold">
+						Folder path
+						<span class="form-hint">Change the folder name and the url name used using no spaces</span>
 					</label>
-					<input name="name" class="form-control" value="{{name}}"></input>
+					<input name="path" class="form-control" value="{{path}}"></input>
 				</div>
 
-				<div class="form-group">
-					<label class="form-label">
-						<span>Description</span>
-					</label>
-					<textarea name="description" class="form-control">{{description}}</textarea>
-				</div>
+					<div class="form-group">
+						<label class="form-label-bold">
+							Description
+							<span class="form-hint">Edit the description to help distinguish this iteration</span>
+						</label>
+						<textarea name="description" class="form-control">{{description}}</textarea>
+					</div>
+				</fieldset>
+				<fieldset>
+					<div class="form-group">
+						<label class="form-label-bold">
+							What phase is your project in?
+							<span class="form-hint">Change the phase banner on your iteration</span>
+						</label>
+						<select name="phase" class="form-control">
+							<option value="alpha" {{#isAlpha}}selected="true"{{/isAlpha}}>Alpha</option>
+							<option value="beta" {{#isBeta}}selected="true"{{/isBeta}}>Beta</option>
+							<option value="" {{#isLive}}selected="true"{{/isLive}}>Live</option>
 
-				<div class="form-group">
-					<label class="form-label">
-						<span>What phase is your project in?</span>
-					</label>
-					<select name="phase" class="form-control">
-						<option value="" {{#isLive}}selected="true"{{/isLive}}>Live</option>
-						<option value="beta" {{#isBeta}}selected="true"{{/isBeta}}>Beta</option>
-						<option value="alpha" {{#isAlpha}}selected="true"{{/isAlpha}}>Alpha</option>
-					</select>
-				</div>
-
-				<button class="button">Create iteration</button>
-
+						</select>
+					</div>
+				</fieldset>
+				<button class="button">Make changes</button>
 			</form>
 
-			<a href="/admin/edit-iteration">Back</a>
-
+			<a href="javascript:history.go(-1)" class="link-back">Back</a>
 		</div>
 		<div class="column-third">
-
 			{{>includes/admin-tools}}
-
 		</div>
 	</div>
-
 
 </main>
 
 {{/content}}
-
 {{/layout}}

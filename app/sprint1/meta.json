@@ -1,5 +1,5 @@
 {
-  "name": "Sprint 1",
-  "description": "Here is a basic description!",
-  "phase": ""
+  "name": "Sprint1",
+  "description": "You can edit this iteration and the phase banner you wish to use",
+  "phase": "alpha"
 }
