@@ -1,5 +1,6 @@
 /node_modules/
 /public/
+/global/public/
 /views/
 /app/*/public/
 npm-debug.log
