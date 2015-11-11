@@ -11,11 +11,14 @@
 
 		<h1 class="heading-xlarge">Your prototype name</h1>
         <p class="lede">General paragraph for your prototype, information regarding the service the prototype is for etc.</p>
+        
+        {{#isDev}}
         <div class="panel-indent panel-indent-info">
             <a href="/admin/new-iteration" class="button">Create a new iteration</a>
         </div>
+        {{/isDev}}
 
-		{{>includes/subapp-list}}
+	{{>includes/subapp-list}}
 
 	</div>
 
