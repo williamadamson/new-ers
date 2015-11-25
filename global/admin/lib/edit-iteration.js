@@ -45,7 +45,6 @@ module.exports = function (app) {
         phase : req.body.phase
       };
       var newPath = path.join(cwd, 'app', req.body.path);
-      console.log(newPath);
       fs.writeJsonSync(
           path.join(cwd, 'app', req.params.iteration, 'meta.json'), meta);
       fs.rename(path.join(cwd, 'app', req.params.iteration), newPath);
