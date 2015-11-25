@@ -1,0 +1,72 @@
+{{<layout}}
+
+{{$pageTitle}}Submit your ERS annual return{{/pageTitle}}
+{{$afterHeader}}
+   
+{{/afterHeader}}
+
+{{$content}}
+  {{>alpha_banner}}
+  {{>hmrc_banner}}
+
+
+
+<main id="content" role="main">
+   
+<div class="outer-block">
+  <div class="inner-block">
+  <!-- main content starts -->
+   {{>sub_header_CSOP}}
+<h1 class="heading-large">Upload your spreadsheets</h1>
+ <!-- radio buttons start -->
+          <p class="text">Choose the spreadsheet or spreadsheets that you want to upload as part of your end of year Company Share Option Plan return.</p>
+
+          <div class="text panel-indent"><p class="text">
+              Your spreadsheets need to have been saved as Open Document Spreadsheet (ODS),  Comma Separated Values (CSV) or Microsoft Excel spreadsheet (XLS) files. If you're uploading multiple spreadsheets they must all be the same file type (ODS, CSV or XLS).
+              </p></div>
+                     <!--<details>
+            <summary><span class="summary">What are format errors?</span></summary>
+            <div class="panel-indent">
+              <p class="text">
+               Some information about formatting errors.
+              </p>
+            </div>
+            </details>
+            <br>
+            <p class="text">Your spreadsheet must be in OpenDocument Spreadsheet (.ods) format</p>-->
+         
+                    <!-- <details>
+            <summary><span class="summary">What is ods format?</span></summary>
+            <div class="panel-indent">
+              <p class="text">
+               Some information about ods.
+              </p>
+            </div>
+            </details>
+           <h2 class="heading-medium">Choose and upload your spreadsheet.</h2>-->
+</div>
+ <div class="inner-block">
+  <div id="question1" class="form-group">
+                  <div id="browsefilebox" class="question-body">                 
+                    <div class="form1">       
+                      <input id="selectFile" type="file" name="somename" size="chars" accept=".ods">
+                      <!--<div id="btnHolder"><button id="selectFileBtn" class="button-secondary">Choose your file</button></div>-->
+                      <div id="selectedFileName">&nbsp;</div>     
+                    </div>                  
+                  </div>
+                </div>        
+
+              <a class="button" href="checking_multiple5">Continue</a>
+            </p>    
+          </form>
+          <p class="text"><a href="what_scenario3_2_test">Back</a></p>
+        </div>
+
+
+ <!-- main content ends -->
+ </div>
+  </div>
+</main>
+{{/content}}
+
+{{/layout}}
