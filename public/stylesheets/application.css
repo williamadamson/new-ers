@@ -1890,7 +1890,7 @@ ol {
   background: #fff;
 }
 
-.form-label-bold {
+.form-label-bold, .form-label {
   margin-bottom: 10px;
 }
 
