@@ -292,7 +292,7 @@ module.exports = {
         var data = req.body;
         var url;
         if (data['radio-group'] === 'Yes') {
-            url = '/EMI/errors/choose-file-type';
+            url = '/EMI/errors/upload-spreadsheet';
         } else if (data['radio-group'] === 'No') {
             url = '#';
         } else {
