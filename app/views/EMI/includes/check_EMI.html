@@ -1,15 +1,18 @@
+<p>Choose the spreadsheet you want to upload as part of your Enterprise Management Incentives annual return.</p>
+<div class="panel-indent">
+	<p>You can only upload OpenDocument Spreadsheet (.ods) files.</p>
+</div>
+
 <form method="post">
-  {{! <p>Choose the OpenDocument Spreadsheet (ODS, .ods file) that you want to upload as part of your Enterprise Management Incentives annual return.</p> }}
-  <p>Choose the spreadsheet you want to upload as part of your Enterprise Management Incentives annual return.</p>
-  <div class="panel-indent">
-    You can only upload OpenDocument Spreadsheet (.ods) files.
-  </div>
-  <div id="question1" class="form-group">
-    <div id="browsefilebox" class="question-body">
-      <div class="form1">
-        <input id="selectFile" type="file" name="somename" size="chars" accept=".ods">
-        <!--<div id="btnHolder"><button id="selectFileBtn" class="button-secondary">Choose your file</button></div>-->
-        <div id="selectedFileName">&nbsp;</div>
-      </div>
-    </div>
-  </div>
+	<div class="form-group">
+		<div class="upload">
+			<div class="column-two-thirds">
+				<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+				<label for="file">Choose a file</label>
+				{{! <input type="file" size="60" accept=".ods" class="custom-file-input"> }}
+			</div>
+			<div class="column-one-third">
+				<a class="button" href="/EMI/errors/check-for-errors">Upload</a>
+			</div>
+		</div>
+	</div>
