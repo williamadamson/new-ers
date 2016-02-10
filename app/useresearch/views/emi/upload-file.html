@@ -1,0 +1,91 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+		<main id="content" role="main">
+			{{>includes/alpha_banner}}
+			{{>EMI/includes/reference}}
+
+			<div class="grid-row">
+				<div class="column-two-thirds">
+
+				  	<h1 class="heading-xlarge">Upload your files</h1>
+
+				  	<p>Choose the comma separated values (CSV, .csv) files that you want to upload as part of your Enterprise Management Incentives annual return.</p>
+		  			<div class="panel-indent">
+			  			You can only upload CSV (.csv) files.
+			  		</div>
+
+
+
+					 <form method="post">
+                    <div id="question1" class="form-group">
+                        <p class="form-label-bold">Adjustment of options</p>
+                        <div id="browsefilebox" class="question-body">
+                            <div class="form1">
+                                <input id="selectFile" type="file" name="somename" size="chars">
+                                {{! <div id="selectedFileName">&nbsp;</div> }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="question1" class="form-group">
+                        <p class="form-label-bold">Replacement of options</p>
+                        <div id="browsefilebox" class="question-body">
+                            <div class="form1">
+                                <input id="selectFile" type="file" name="somename" size="chars">
+                            {{! <div id="selectedFileName">&nbsp;</div> }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="question1" class="form-group">
+                        <p class="form-label-bold">Options released, lapsed or cancelled</p>
+                        <div id="browsefilebox" class="question-body">
+                            <div class="form1">
+                                <input id="selectFile" type="file" name="somename" size="chars">
+                            {{! <div id="selectedFileName">&nbsp;</div> }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="question1" class="form-group">
+                        <p class="form-label-bold">Non-taxable exercise of options</p>
+                        <div id="browsefilebox" class="question-body">
+                            <div class="form1">
+                                <input id="selectFile" type="file" name="somename" size="chars">
+                            {{! <div id="selectedFileName">&nbsp;</div> }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="question1" class="form-group">
+                        <p class="form-label-bold">Taxable exercise of options</p>
+                        <div id="browsefilebox" class="question-body">
+                            <div class="form1">
+                                <input id="selectFile" type="file" name="somename" size="chars">
+                            {{! <div id="selectedFileName">&nbsp;</div> }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <input id="input-file-name" type="file" name="file[]" style="display:none;" multiple/>
+
+                    <div class="form-group">
+                        <a class="button" href="/EMI/company-details">Upload files</a>
+                    </div>
+                </form>
+
+				<a href="javascript:history.go(-1)" class="link-back">Back</a>
+				</div>
+			</div>
+
+		</main>
+
+{{/main}}
+
+{{/layout}}

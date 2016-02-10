@@ -1,0 +1,58 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+            <h1 class="heading-xlarge">Choose the comma separated values (CSV, .csv) file that you want to upload</h1>
+
+            {{! <div class="panel">
+                You can only upload CSV (.csv) files.
+            </div>
+ }}
+            <form method="post">
+                <div class="form-group">
+                    <div class="upload">
+                        <div class="column-two-thirds">
+                            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                            <label for="file">Choose a file</label>
+                        </div>
+                        <div class="column-one-third">
+                            <a class="button" href="subsidiary-companies">Upload</a>
+                        </div>
+                    </div>
+                </div>
+                {{! <div class="form-group">
+                    <a class="button" href="/EMI/company-details">Upload spreadsheet</a>
+                </div> }}
+            </form>
+
+
+            {{! <form method="post">
+                <div id="question1" class="form-group">
+                    <p class="visuallyhidden">Choose the comma separated values (CSV, .csv) file that you want to upload</p>
+                    <div id="browsefilebox" class="question-body">
+                        <div class="form1">
+                            <input id="selectFile" type="file" name="somename" size="chars">
+                        </div>
+                    </div>
+                </div>
+                <input id="input-file-name" type="file" name="file[]" style="display:none;" multiple/>
+                <div class="form-group">
+                    <a class="button" href="/EMI/subsidiary-companies">Upload file</a>
+                </div>
+            </form> }}
+
+        </div>
+    </div>
+
+{{/main}}
+
+{{/layout}}

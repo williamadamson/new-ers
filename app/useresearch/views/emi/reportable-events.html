@@ -1,0 +1,43 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    {{>includes/reference}}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+            <h1 class="heading-xlarge">Have options been adjusted, replaced, released, lapsed, cancelled or exercised during the tax year? {{! Reportable events }}</h1>
+
+            <form method="post">
+
+                {{! <input type="hidden" name="next-page" value="address"> }}
+
+                <legend class="visuallyhidden">Have options been adjusted, replaced, released, lapsed, cancelled or exercised during the tax year?</legend>
+
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <label class="block-label" for="yes">
+                        <input id="yes" type="radio" name="next-page" value="emi/upload-spreadsheet">Yes</label>
+                        <label class="block-label" for="no">
+                        <input id="no" type="radio" name="next-page" value="emi/company-details">No (nil return)</label>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <button class="button">Continue</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+
+{{/main}}
+{{/layout}}
