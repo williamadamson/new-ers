@@ -1,7 +1,9 @@
 /node_modules/
 /public/
 /global/public/
+/global/admin/public/
+/global/template/
 /views/
-/app/*/public/
+/app/*/public/stylesheets
 npm-debug.log
 .idea/
