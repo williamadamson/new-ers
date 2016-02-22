@@ -1,0 +1,5 @@
+{
+  "name": "Checking service",
+  "description": "Use this service to check for formatting errors in the spreadsheet or comma separated values (CSV, .csv) files that you need to upload as part of your Employment Related Securities (ERS) annual return.",
+  "phase": "beta"
+}

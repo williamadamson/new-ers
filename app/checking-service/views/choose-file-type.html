@@ -1,0 +1,37 @@
+{{<layout-cs}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+	  		<p><a href="javascript:history.go(-1)" class="link-back">Back</a></p>
+			<h1 class="heading-xlarge">Choose your file type</h1>
+
+            <p>What type of file do you want to check?</p>
+			<form class="form" method="post" >
+				<fieldset>
+					<legend class="visuallyhidden">What type of file do you want to check?</legend>
+					<div class="form-group">
+						<label for="radio-1" class="block-label">
+							<input id="radio-1" type="radio" name="radio-group" class="form-control" value="Company Share Option Plan (CSOP)">Comma separated values (CSV, .csv)<br>
+						</label>
+						<label for="radio-2" class="block-label">
+							<input id="radio-2" type="radio" name="radio-group" value="Enterprise Management Incentives (EMI)">OpenDocument Spreadsheet (ODS, .ods)
+						</label>
+					</div>
+				</fieldset>
+				<div class="form-group">
+					<a href="choose-and-check"  class="button" type="submit" id="save-and-continue">Continue</a>
+				</div>
+			</form>
+
+        </div>
+    </div>
+
+{{/main}}
+{{/layout-cs}}
