@@ -13,22 +13,25 @@
 			<h1 class="heading-xlarge">Choose your file type</h1>
 
             <p>What type of file do you want to check?</p>
-			<form class="form" method="post" >
+
+            <form class="form" method="post" >
+
 				<fieldset>
 					<legend class="visuallyhidden">What type of file do you want to check?</legend>
 					<div class="form-group">
 						<label for="radio-1" class="block-label">
-							<input id="radio-1" type="radio" name="radio-group" class="form-control" value="Company Share Option Plan (CSOP)">Comma separated values (CSV, .csv)<br>
+							<input id="radio-1" type="radio" name="next-page" class="form-control" value="choose-and-check-csv">Comma separated values (CSV, .csv)<br>
 						</label>
 						<label for="radio-2" class="block-label">
-							<input id="radio-2" type="radio" name="radio-group" value="Enterprise Management Incentives (EMI)">OpenDocument Spreadsheet (ODS, .ods)
+							<input id="radio-2" type="radio" name="next-page" value="choose-and-check">OpenDocument Spreadsheet (ODS, .ods)
 						</label>
 					</div>
 				</fieldset>
 				<div class="form-group">
-					<a href="choose-and-check"  class="button" type="submit" id="save-and-continue">Continue</a>
+                    <input type="submit" class="button" value="Continue">
 				</div>
-			</form>
+
+            </form>
 
         </div>
     </div>
