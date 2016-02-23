@@ -1,5 +1,6 @@
 {
   "name": "User Research - A",
   "description": "Journey 1 to be used for User Research Feb 4th week",
-  "phase": "beta"
+  "phase": "beta",
+  "hidden": true
 }
