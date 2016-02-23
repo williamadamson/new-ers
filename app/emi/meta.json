@@ -1,6 +1,6 @@
 {
   "name": "EMI Scheme",
   "description": "Employment related securities end of year returns service for EMI scheme ( Form EMI40 )",
-  "phase": "",
+  "phase": "beta",
   "hidden": true
 }

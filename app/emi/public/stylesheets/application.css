@@ -1602,6 +1602,13 @@ input[type=number] {
 .space {
   margin-bottom: 2em; }
 
+.govuk-box-highlight {
+  margin-top: 40px; }
+  .govuk-box-highlight h1.heading-xlarge {
+    margin: 0 0 10px 0; }
+  .govuk-box-highlight h1.heading-large {
+    margin: 0 0 10px 0; }
+
 .link-back {
   margin-bottom: 0px; }
 
@@ -1610,7 +1617,8 @@ input[type=number] {
 
 .upload {
   background: #eee;
-  padding: 10px; }
+  padding: 10px;
+  min-height: 40px; }
   .upload .button {
     margin: 0 0 0 100px;
     text-align: right; }

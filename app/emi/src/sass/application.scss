@@ -6,6 +6,20 @@
 }
 
 
+.govuk-box-highlight {
+
+  margin-top: 40px;
+
+  h1.heading-xlarge {
+    margin: 0 0 10px 0;
+
+  }
+  h1.heading-large {
+    margin: 0 0 10px 0;
+
+  }
+}
+
 .link-back {
   margin-bottom: 0px;
 }
@@ -17,6 +31,7 @@
 .upload {
   background: #eee;
   padding: 10px;
+  min-height: 40px;
 
   .button {
     margin: 0 0 0 100px;
