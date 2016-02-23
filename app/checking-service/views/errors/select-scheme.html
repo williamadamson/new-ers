@@ -1,0 +1,55 @@
+{{<layout-cs}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+		  		<p><a href="javascript:history.go(-1)" class="link-back">Back</a></p>
+
+				<h1 class="heading-xlarge">Which type of ERS scheme or arrangement is this file for?</h1>
+
+				<form class="form" method="post" >
+					<fieldset>
+						<legend class="visuallyhidden">Which type of ERS scheme or arrangement is this spreadsheet for?</legend>
+
+						<div class="form-group">
+							<label for="radio-1" class="block-label">
+								<input id="radio-1" type="radio" name="radio-group" class="form-control" value="Company Share Option Plan (CSOP)">Company Share Option Plan (CSOP &ndash; Form 35)<br>
+							</label>
+
+							<label for="radio-2" class="block-label">
+								<input id="radio-2" type="radio" name="radio-group" value="Enterprise Management Incentives (EMI)">Enterprise Management Incentives (EMI &ndash; Form EMI40)
+							</label>
+
+							<label for="radio-3" class="block-label">
+								<input id="radio-3" type="radio" name="radio-group" value="Save As You Earn (SAYE)">Save As You Earn (SAYE &ndash; Form 34)<br>
+							</label>
+
+							<label for="radio-4" class="block-label">
+								<input id="radio-4" type="radio" name="radio-group" value="Share Incentive Plan (SIP)">Share Incentive Plan (SIP &ndash; Form 39)
+							</label>
+
+							<label for="radio-5" class="block-label">
+								<input id="radio-5" type="radio" name="radio-group" value="Other (previously form 42)">Other (Form 42)
+							</label>
+						</div>
+					</fieldset>
+
+
+					<div class="form-group">
+						<a href="choose-file-type"  class="button" type="submit" id="save-and-continue">Continue</a>
+					</div>
+
+
+				</form>
+
+        </div>
+    </div>
+
+{{/main}}
+{{/layout-cs}}
