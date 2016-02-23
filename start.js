@@ -56,25 +56,26 @@ app.set('views', glob.sync([
 ]));
 
 // serve static global assets
-app.use('/', 
+app.use('/',
   express.static(path.join(__dirname, 'global', 'public')));
 
-app.use('/public/images/icons', 
+app.use('/public/images/icons',
   express.static(path.join(__dirname, 'global', 'public', 'images')));
 
 // include the app file from each sub project
 // as sub app mounted at the prefix of the name
 // of the folder
-glob.sync(__dirname + '/app/*')
+glob.sync(__dirname + '/app/**/app.js')
+  .filter(function (e) {
+    var meta = fs.readJsonSync(path.join(path.dirname(e), 'meta.json'));
+    return app.locals.isDev || !meta.hidden;
+  })
   .map(function (e) {
-
     var p = './' + path.relative(
       __dirname, e
     ).replace(/\\/g, '/');
-
-    var meta = fs.readJsonSync(p + '/meta.json');
-    var name = e.replace(/^.*app(\/.*?)$/, '$1');
-    var sub = require(p + '/app.js');
+    var name = e.replace(/^.*app(\/.*?)\/.*$/, '$1');
+    var sub = require(p);
     // if a get request falls through to this
     // point we check to see if we have a view
     // that matches the url and render that.
