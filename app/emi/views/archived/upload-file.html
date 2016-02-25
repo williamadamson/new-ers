@@ -1,3 +1,4 @@
+
 {{<layout}}
 
 {{$pageTitle}}
@@ -5,87 +6,41 @@
 {{/pageTitle}}
 
 {{$main}}
- {{>includes/reference}}
-		<main id="content" role="main">
-			{{>includes/alpha_banner}}
-			{{>EMI/includes/reference}}
 
-			<div class="grid-row">
-				<div class="column-two-thirds">
+    <div class="grid-row">
+        <div class="column-two-thirds">
 
-				  	<h1 class="heading-xlarge">Upload your files</h1>
+            {{>emi/includes/reference}}
 
-				  	<p>Choose the comma separated values (CSV, .csv) files that you want to upload as part of your Enterprise Management Incentives annual return.</p>
-		  			<div class="panel-indent">
-			  			You can only upload CSV (.csv) files.
-			  		</div>
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
 
+            <h1 class="heading-xlarge">Upload your file</h1>
 
+            <div class="panel panel-border-wide space">
+                <p>You can only upload OpenDocument Spreadsheet (.ods) files at the moment</p>
+                <p><a href="/contact/beta-feedback-unauthenticated">Contact us on our feedback page</a> if your file is larger than 10MB.</p>
+            </div>
 
-					 <form method="post">
-                    <div id="question1" class="form-group">
-                        <p class="form-label-bold">Adjustment of options</p>
-                        <div id="browsefilebox" class="question-body">
-                            <div class="form1">
-                                <input id="selectFile" type="file" name="somename" size="chars">
-                                {{! <div id="selectedFileName">&nbsp;</div> }}
-                            </div>
+            <p>Choose the file you want to upload as part of your Enterprise Management Incentives annual return.</p>
+
+            <form method="post">
+                <div class="form-group">
+                    <div class="upload">
+                        <div class="column-two-thirds">
+                            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                            <label for="file">Choose a file</label>
+                        </div>
+                        <div class="column-one-third">
+                            <a class="button" href="upload-information">Upload</a>
                         </div>
                     </div>
+                </div>
+            </form>
 
-                    <div id="question1" class="form-group">
-                        <p class="form-label-bold">Replacement of options</p>
-                        <div id="browsefilebox" class="question-body">
-                            <div class="form1">
-                                <input id="selectFile" type="file" name="somename" size="chars">
-                            {{! <div id="selectedFileName">&nbsp;</div> }}
-                            </div>
-                        </div>
-                    </div>
 
-                    <div id="question1" class="form-group">
-                        <p class="form-label-bold">Options released, lapsed or cancelled</p>
-                        <div id="browsefilebox" class="question-body">
-                            <div class="form1">
-                                <input id="selectFile" type="file" name="somename" size="chars">
-                            {{! <div id="selectedFileName">&nbsp;</div> }}
-                            </div>
-                        </div>
-                    </div>
 
-                    <div id="question1" class="form-group">
-                        <p class="form-label-bold">Non-taxable exercise of options</p>
-                        <div id="browsefilebox" class="question-body">
-                            <div class="form1">
-                                <input id="selectFile" type="file" name="somename" size="chars">
-                            {{! <div id="selectedFileName">&nbsp;</div> }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="question1" class="form-group">
-                        <p class="form-label-bold">Taxable exercise of options</p>
-                        <div id="browsefilebox" class="question-body">
-                            <div class="form1">
-                                <input id="selectFile" type="file" name="somename" size="chars">
-                            {{! <div id="selectedFileName">&nbsp;</div> }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <input id="input-file-name" type="file" name="file[]" style="display:none;" multiple/>
-
-                    <div class="form-group">
-                        <a class="button" href="/EMI/company-details">Upload files</a>
-                    </div>
-                </form>
-
-				<a href="javascript:history.go(-1)" class="link-back">Back</a>
-				</div>
-			</div>
-
-		</main>
+        </div>
+    </div>
 
 {{/main}}
-
 {{/layout}}

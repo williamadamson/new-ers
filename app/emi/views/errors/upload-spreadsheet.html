@@ -1,4 +1,3 @@
-
 {{<layout}}
 
 {{$pageTitle}}
@@ -7,18 +6,17 @@
 
 {{$main}}
 
-    <div class="grid-row">
-        <div class="column-two-thirds">
+    {{>includes/reference}}
 
-            {{>emi/includes/reference}}
+    <div class="grid-row">
+		<div class="column-two-thirds">
 
             <a href="javascript:history.go(-1)" class="link-back">Back</a>
-
-            <h1 class="heading-xlarge">Upload your file</h1>
+			<h1 class="heading-xlarge">Upload your file</h1>
 
             <div class="panel panel-border-wide space">
-                <p>You can only upload OpenDocument Spreadsheet (.ods) files at the moment</p>
-                <p><a href="/contact/beta-feedback-unauthenticated">Contact us on our feedback page</a> if your file is larger than 10MB.</p>
+                <p>You can only upload OpenDocument Spreadsheet (.ods) files at the moment.</p>
+                <p><a href="#">Contact us on our feedback page</a> if your file is larger than 10MB.</p>
             </div>
 
             <p>Choose the file you want to upload as part of your Enterprise Management Incentives annual return.</p>
@@ -31,13 +29,11 @@
                             <label for="file">Choose a file</label>
                         </div>
                         <div class="column-one-third">
-                            <a class="button" href="upload-information">Upload</a>
+                            <a class="button" href="check-for-errors">Upload</a>
                         </div>
                     </div>
                 </div>
             </form>
-
-
 
         </div>
     </div>
