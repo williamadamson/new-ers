@@ -1,0 +1,6 @@
+{
+  "name": "EMI Scheme - CSV upload",
+  "description": "EMI Scheme journey with NEW CSV upload option introduced using the attachment service.",
+  "phase": "beta",
+  "hidden": false
+}
