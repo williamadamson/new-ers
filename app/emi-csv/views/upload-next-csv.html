@@ -1,0 +1,50 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    {{>includes/reference}}
+
+    <div class="grid-row">
+		<div class="column-two-thirds">
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+			<h1 class="heading-xlarge">Needs a title</h1>
+
+            <div class="panel panel-border-wide space">
+                <p><img src="public/images/icons/icon-tick.png" /> EMI40_AdjustmentOptions.csv has been added</p>
+            </div>
+
+                <p>You have the following files left to upload</p>
+                <ul class="list list-bullet space">
+                    <li>Replacement of options</li>
+                </ul>
+
+            {{! <div class="panel panel-border-wide space">
+                <p>You can only upload CSV (.csv) files.</p>
+                <p><a href="#">Contact us on our feedback page</a> if your file is larger than 10MB.</p>
+            </div> }}
+
+
+            <form method="post">
+                <div class="form-group">
+                    <div class="upload">
+                        <div class="column-two-thirds">
+                            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                            <label for="file">Choose a file</label>
+                        </div>
+                        <div class="column-one-third">
+                            <a class="button" href="upload-next-b-csv">Upload</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+{{/main}}
+{{/layout}}
