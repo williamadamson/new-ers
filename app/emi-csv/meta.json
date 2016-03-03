@@ -1,6 +1,6 @@
 {
-  "name": "EMI Scheme - CSV upload",
-  "description": "EMI Scheme journey with NEW CSV upload option introduced using the attachment service.",
+  "name": "EMI Scheme - inc CSV upload",
+  "description": "EMI Scheme journey with NEW CSV upload option introduced using the attachment service as well as the ODS option",
   "phase": "beta",
   "hidden": false
 }
