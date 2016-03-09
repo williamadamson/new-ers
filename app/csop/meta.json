@@ -2,5 +2,5 @@
   "name": "CSOP Scheme",
   "description": "Company Share Option Plan annual return (Form 35)",
   "phase": "",
-  "hidden": true
+  "hidden": false
 }

@@ -1,0 +1,55 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    {{>includes/reference}}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+            <h1 class="heading-xlarge">What alterations or variations have been made?</h1>
+
+            <p class="text">Select all that apply.</p>
+
+            <form action="" method="post" class="form">
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="visuallyhidden">What alterations or variations have been made?</legend>
+                        <label class="block-label" for="amendscheckbox1">
+                            <input id="amendscheckbox1" name="amends-group" type="checkbox" id="amendscheckbox1" value="1">Alterations to the terms of an existing option (other than by a variation in the share capital of which the shares form a part)
+                        </label>
+                        <label class="block-label" for="amendscheckbox2">
+                            <input id="amendscheckbox2" name="amends-group" type="checkbox" id="amendscheckbox2" value="2">Alterations to the eligibility of individuals to join the scheme
+                        </label>
+                        <label class="block-label" for="amendscheckbox3">
+                            <input id="amendscheckbox3" name="amends-group" type="checkbox" id="amendscheckbox3" value="3">Alterations arising from an exchange of share options on a company reorganisation
+                        </label>
+                        <label class="block-label" for="amendscheckbox4">
+                            <input id="amendscheckbox4" name="amends-group" type="checkbox" id="amendscheckbox4" value="4">A variation in the share capital of which the shares form a part
+                        </label>
+                        <label class="block-label" for="amendscheckbox7">
+                            <input id="amendscheckbox7" name="amends-group" type="checkbox" id="amendscheckbox7" value="7">Other
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div class="panel panel-border-wide space">
+                    <p>The company secretary or the person acting as the company secretary declares that the alteration or the variation in any share capital, hasn’t caused the requirements of parts 2 to 6 of Schedule 4 Income Tax (Earnings and Pensions) Act 2003 not to be met in relation to the Company Share Option Plan.</p>
+                </div>
+
+                <div class="form-group">
+                    <a class="button" href="summary">Accept and continue</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+{{/main}}
+{{/layout}}
