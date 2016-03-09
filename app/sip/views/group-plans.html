@@ -1,0 +1,43 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    {{>includes/reference}}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+            <h1 class="heading-xlarge">Is this a group plan?</h1>
+
+            <p>If the establishing company is part of a group of companies, the plan may be offered to the other companies within that group.</p>
+
+            <form method="post">
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <legend class="visuallyhidden">Are there any qualifying subsidiary companies?</legend>
+                        <label class="block-label" for="yes">
+                            {{! <input id="yes" type="radio" value="qualifying-company-details" name="next-page"></input>Yes }}
+                            <input id="yes" type="radio" value="group-plan-company-details" name="next-page"></input>Yes
+
+                        </label>
+                        <label class="block-label" for="no">
+                            <input id="no" type="radio" value="trustee-details" name="next-page"></input>No
+                        </label>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <button class="button">Continue</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+{{/main}}
+{{/layout}}
