@@ -12,25 +12,31 @@
         <div class="column-two-thirds">
 
             <a href="javascript:history.go(-1)" class="link-back">Back</a>
-            <h1 class="heading-xlarge">Submission errors</h1>
-
-            <div class="panel panel-border-wide">
-                <p>Fix the errors before you use this service again or <a href="upload-spreadsheet">choose a different file to upload</a>.</p>
-            </div>
-
-            <h2 class="heading-medium">You need to fix your errors</h2>
-            <p><a href="../../checking-service/start">Use the HM Revenue and Customs file check service</a> to get a detailed error report.</p>
+            <h1 class="heading-xlarge">There is a problem</h1>
+            <p class="lede">Your Enterprise Management Incentives annual return has not been submitted.</p>
 
 
-
+            <h2 class="heading-medium">You need to upload your file again</h2>
 
             <div class="panel panel-border-wide space">
-                <p>The company secretary, or the person acting as the company secretary, agrees that the information submitted is correct and complete.</p>
+                <p>You can only upload OpenDocument Spreadsheet (.ods) files at the moment.</p>
+                <p><a href="#">Contact us on our feedback page</a> if your .ods file is larger than 10MB.</p>
             </div>
 
-            <div class="form-group">
-                <a class="button" href="upload-spreadsheet">Upload file again</a>
-            </div>
+            <form method="post">
+                <div class="form-group">
+                    <div class="upload">
+                        <div class="column-two-thirds">
+                            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                            <label for="file">Choose file</label>
+                        </div>
+                        <div class="column-one-third">
+                            <a class="button" href="check-for-errors-again">Upload</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
 
         </div>
     </div>
