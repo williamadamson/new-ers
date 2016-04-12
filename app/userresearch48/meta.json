@@ -2,5 +2,5 @@
   "name": "User Research",
   "description": "EMI csv upload journey to be used for User Research during sprint 48",
   "phase": "beta",
-  "hidden": false
+  "hidden": true
 }

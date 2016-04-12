@@ -1,6 +1,6 @@
 {
   "name": "SIP Scheme",
   "description": "Share Incentive Plan (Form 39)",
-  "phase": "alpha",
-  "hidden": true
+  "phase": "beta",
+  "hidden": false
 }

@@ -1,6 +1,6 @@
 {
   "name": "SAYE Scheme",
   "description": "Save As You Earn annual return (Form 34)",
-  "phase": "alpha",
-  "hidden": true
+  "phase": "beta",
+  "hidden": false
 }
