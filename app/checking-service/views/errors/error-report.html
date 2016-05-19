@@ -11,24 +11,133 @@
 
 		  	<p><a href="javascript:history.go(-1)" class="link-back">Back</a></p>
 
-			<h1 class="heading-xlarge">Error report</h1>
 
-			<div class="panel panel-border-wide space">
-				<p>Errors have been found.</p>
-			</div>
 
-			<p>View and then save your copy of the error report (it will open in a new window or tab).</p>
-			<div class="form-group">
-				<a class="button medium" id="btnValidation" type="button" href="../public/pdf/errors_report_EMI.pdf" target="_blank" title="Opens new window">View error report (PDF, 500k)</a>
-			</div>
 
-			<p>You can also <a href="error_webpage">view this error report as a web page</a>.</p>
 
-            <hr />
 
-			<h2 class="heading-medium">What happens next</h2>
-			<p>Fix the errors before you use this service again or <a href="select-scheme">choose a different file to check</a>.</p>
 
+            <h1 class="heading-xlarge" >Enterprise Management Incentives (EMI)<br>
+            error report</h1>
+
+            <div class="panel panel-border-wide">
+                <p>Your spreadsheets contain 11 errors.</p>
+            </div>
+
+
+            {{! <h2 class="heading-medium">Summary of errors</h2>
+            <ul class="list-bullet">
+                <li>5 entries are formatted to the wrong number of decimal places</li>
+                <li>2 entries have invalid National Insurance number formats</li>
+                <li>2 entries have invalid yes/no information</li>
+                <li>1 entry isn't in the expected number format</li>
+                <li>1 item index is in the wrong sequential order</li>
+            </ul> }}
+
+
+            <h2 class="heading-medium">Errors by sheet name (title)</h2>
+
+            <p>EMI_OptionsGranted_V0.csv</p>
+            <table class="space">
+                <thead>
+                    <tr>
+                        <th>Column</th>
+                        <th>Row</th>
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>F</td>
+                        <td>14</td>
+                        <td>National Insurance number must be 2 letters followed by 6 number digits, with an optional final letter.</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>16</td>
+                        <td>Must be a number with 2 digits after the decimal point (and no more than 11 digits in front of it).</td>
+                    </tr>
+                    <tr>
+                        <td>I</td>
+                        <td>24</td>
+                        <td>Must be a number with 4 digits after the decimal point (and no more than 13 digits in front of it).</td>
+                    </tr>
+                    <tr>
+                        <td>K</td>
+                        <td>15</td>
+                        <td>Must be a number with 4 digits after the decimal point (and no more than 13 digits in front of it).</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>17</td>
+                        <td>Must be a whole number and be less than 1,000,000.</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>21</td>
+                        <td>Must be a number with 2 digits after the decimal point (and no more than 11 digits in front of it).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>MI_OptionsRCL_V0.csv</p>
+            <table class="space">
+                <thead>
+                    <tr>
+                        <th>Column</th>
+                        <th>Row</th>
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>F</td>
+                        <td>24</td>
+                        <td>Enter a date that matches the yyyy-mm-dd pattern.</td>
+                    </tr>
+                    <tr>
+                        <td>K</td>
+                        <td>33</td>
+                        <td>Enter 'yes' or 'no'.</td>
+                    </tr>
+                    <tr>
+                        <td>K</td>
+                        <td>10013</td>
+                        <td>Enter 'yes' or 'no'.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <p>EMI_OptionsExercised_V0.csv</p>
+            <table class="space">
+                <thead>
+                    <tr>
+                        <th>Column</th>
+                        <th>Row</th>
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>G</td>
+                        <td>16</td>
+                        <td>National Insurance number must be 2 letters followed by 6 number digits, with an optional final letter.</td>
+                    </tr>
+                    <tr>
+                        <td>J</td>
+                        <td>16</td>
+                        <td>Must be a number with 2 digits after the decimal point (and no more than 11 digits in front of it).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <h2 class="heading-medium">What happens next</h2>
+            <p>Fix the errors before you use this service again or <a href="select-scheme">choose a different file to check</a>.</p>
+
+            <p><a href="#">What did you think of this service?</a> (takes 30 seconds)
         </div>
     </div>
 
