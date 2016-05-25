@@ -1,0 +1,35 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    {{>includes/reference}}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+            <h1 class="heading-xlarge">Choose the comma separated values (CSV, .csv) file that you want to upload</h1>
+
+            <form method="post">
+                <div class="form-group">
+                    <div class="upload">
+                        <div class="column-two-thirds">
+                            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+                            <label for="file">Choose a file</label>
+                        </div>
+                        <div class="column-one-third">
+                            <a class="button" href="subsidiary-companies">Upload</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+{{/main}}
+{{/layout}}
