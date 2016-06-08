@@ -1,0 +1,31 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+     {{>includes/reference}}
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            {{>emi/includes/reference}}
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+			<h1 class="heading-xlarge">Errors have been found</h1>
+
+            <div class="panel panel-border-wide">
+                <p>Fix the errors before you use this service again or <a href="choose-csv">choose different files to upload</a>.</p>
+            </div>
+
+            <h2 class="heading-medium">You need to fix your errors</h2>
+            {{! <p><a href="https://www.gov.uk/government/publications/company-share-option-plan-end-of-year-return-template">Use the Company Share Option Plan guidance documents</a> to help you fix the errors.</p> }}
+                <p><a href="../../checking-service/start">Use HM Revenue and Customs' file check service</a> to get a detailed error report.</p>
+        </div>
+    </div>
+
+
+{{/main}}
+{{/layout}}}
