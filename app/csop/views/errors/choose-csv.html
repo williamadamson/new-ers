@@ -1,0 +1,53 @@
+{{<layout}}
+
+{{$pageTitle}}
+    GOV.UK prototyping kit
+{{/pageTitle}}
+
+{{$main}}
+
+    {{>includes/reference}}
+
+    <div class="grid-row">
+		<div class="column-two-thirds">
+
+            <a href="javascript:history.go(-1)" class="link-back">Back</a>
+			<h1 class="heading-xlarge">Choose your files</h1>
+
+
+            <p>Choose the comma seperated values (.csv) files you need to upload as part of your Company Share Option Plan annual return. </p>
+
+            <form>
+                <fieldset>
+                    <legend class="visuallyhidden">Choose which CSV files</legend>
+
+                    <div class="form-group">
+                        <label class="block-label" for="csv-type-1">
+                            <input id="csv-type-1" name="csv-type" type="checkbox" value="adjustment-options">Adjustment of options
+                        </label>
+                        <label class="block-label" for="csv-type-2">
+                            <input id="csv-type-2" name="csv-type" type="checkbox" value="replacement-options">Replacement of options
+                        </label>
+                        <label class="block-label" for="csv-type-3">
+                            <input id="csv-type-3" name="csv-type" type="checkbox" value="options-released">Options released, lapsed or cancelled
+                        </label>
+                        <label class="block-label" for="csv-type-4">
+                            <input id="csv-type-3" name="csv-type" type="checkbox" value="non-taxable">Non-taxable exercise of options
+                        </label>
+                        <label class="block-label" for="csv-type-5">
+                            <input id="csv-type-3" name="waste-type" type="checkbox" value="exercise-options">Taxable exercise of options
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <a class="button" href="upload-csv">Continue</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+{{/main}}
+{{/layout}}
