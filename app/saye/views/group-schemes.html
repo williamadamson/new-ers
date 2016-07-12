@@ -12,18 +12,17 @@
         <div class="column-two-thirds">
 
             <a href="javascript:history.go(-1)" class="link-back">Back</a>
-            <h1 class="heading-xlarge">Group schemes</h1>
+             <h1 class="heading-xlarge">Is this a group scheme?</h1>
 
-            <div class="panel panel-border-wide space">
-                <p>If the company that set up the scheme is a member of a group of companies, the scheme may be offered to the other companies within that group.</p>
-            </div>
+
+           <span class="form-hint">If the scheme organiser is part of a group of companies, the scheme may be offered to the other companies within that group.</span> 
 
 
 
             <form method="post">
                 <div class="form-group">
                     <fieldset class="inline">
-                        <legend class="form-label">Is this a group scheme?</legend>
+                        {{! <legend class="form-label">Is this a group scheme?</legend> }}
                         <label class="block-label" for="yes">
                             {{! <input id="yes" type="radio" value="qualifying-company-details" name="next-page"></input>Yes }}
                             <input id="yes" type="radio" value="add-company-details" name="next-page"></input>Yes
